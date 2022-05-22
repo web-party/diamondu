@@ -1,0 +1,8 @@
+{
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+  "version": 2,
+  "projects": {
+    "kitchen-sink": "apps/kitchen-sink",
+    "kitchen-sink-e2e": "apps/kitchen-sink-e2e"
+  }
+}
