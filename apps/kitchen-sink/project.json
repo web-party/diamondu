@@ -1,7 +1,7 @@
 {
   "projectType": "application",
   "sourceRoot": "apps/kitchen-sink/src",
-  "prefix": "diamondu",
+  "prefix": "d",
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
