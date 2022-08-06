@@ -23,14 +23,6 @@
       }
     }
   },
-  "targetDependencies": {
-    "build": [
-      {
-        "target": "build",
-        "projects": "dependencies"
-      }
-    ]
-  },
   "generators": {
     "@nrwl/angular:application": {
       "style": "css",
@@ -46,5 +38,10 @@
       "style": "css"
     }
   },
-  "defaultProject": "kitchen-sink"
+  "defaultProject": "kitchen-sink",
+  "targetDefaults": {
+    "build": {
+      "dependsOn": ["^build"]
+    }
+  }
 }
