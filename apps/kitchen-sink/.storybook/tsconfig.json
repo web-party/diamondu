@@ -1,0 +1,23 @@
+{
+    "extends": "../tsconfig.json",
+    "compilerOptions": {
+        "emitDecoratorMetadata": true
+    },
+
+    "files": [
+        "../../../node_modules/@nrwl/react/typings/styled-jsx.d.ts",
+        "../../../node_modules/@nrwl/react/typings/cssmodule.d.ts",
+        "../../../node_modules/@nrwl/react/typings/image.d.ts"
+    ],
+    "files": ["../src/polyfills.ts"],
+    "exclude": ["../**/*.spec.ts"],
+    "include": [
+        "../src/**/*.stories.ts",
+        "../src/**/*.stories.js",
+        "../src/**/*.stories.jsx",
+        "../src/**/*.stories.tsx",
+        "../src/**/*.stories.mdx",
+        "*.ts",
+        "*.js"
+    ]
+}
