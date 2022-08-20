@@ -1,4 +1,5 @@
-import { moduleMetadata, Story, Meta } from '@storybook/angular';
+import { Meta, moduleMetadata, Story } from '@storybook/angular';
+import { NgChartsModule } from 'ng2-charts';
 import { CompareGhUsersStarsComponent } from './compare-gh-users-stars.component';
 
 export default {
@@ -6,7 +7,7 @@ export default {
     component: CompareGhUsersStarsComponent,
     decorators: [
         moduleMetadata({
-            imports: [],
+            imports: [NgChartsModule],
         }),
     ],
 } as Meta<CompareGhUsersStarsComponent>;
