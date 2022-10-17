@@ -7,13 +7,6 @@
     "cli": {
         "packageManager": "npm"
     },
-    "implicitDependencies": {
-        "package.json": {
-            "dependencies": "*",
-            "devDependencies": "*"
-        },
-        ".eslintrc.json": "*"
-    },
     "tasksRunnerOptions": {
         "default": {
             "runner": "@nrwl/nx-cloud",
@@ -41,7 +34,8 @@
     "defaultProject": "kitchen-sink",
     "targetDefaults": {
         "build": {
-            "dependsOn": ["^build"]
+            "dependsOn": ["^build"],
+            "inputs": ["production", "^production"]
         },
         "e2e": {
             "inputs": ["default", "^default"]
@@ -55,5 +49,10 @@
         "build-storybook": {
             "inputs": ["default", "^default", "{workspaceRoot}/.storybook/**/*"]
         }
+    },
+    "namedInputs": {
+        "default": ["{projectRoot}/**/*", "sharedGlobals"],
+        "sharedGlobals": [],
+        "production": ["default"]
     }
 }
