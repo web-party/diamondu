@@ -82,7 +82,7 @@
         },
         "test": {
             "executor": "@nrwl/jest:jest",
-            "outputs": ["coverage/apps/kitchen-sink"],
+            "outputs": ["{workspaceRoot}/coverage/apps/kitchen-sink"],
             "options": {
                 "jestConfig": "apps/kitchen-sink/jest.config.ts",
                 "passWithNoTests": true
