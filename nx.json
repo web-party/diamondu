@@ -42,6 +42,9 @@
     "targetDefaults": {
         "build": {
             "dependsOn": ["^build"]
+        },
+        "e2e": {
+            "inputs": ["default", "^default"]
         }
     }
 }
