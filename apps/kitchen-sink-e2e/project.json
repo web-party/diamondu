@@ -1,4 +1,5 @@
 {
+    "name": "kitchen-sink-e2e",
     "$schema": "../../node_modules/nx/schemas/project-schema.json",
     "sourceRoot": "apps/kitchen-sink-e2e/src",
     "projectType": "application",

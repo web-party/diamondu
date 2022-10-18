@@ -1,24 +1,27 @@
 {
-    "name": "kitchen-sink",
+    "name": "material-schematics-playground",
     "$schema": "../../node_modules/nx/schemas/project-schema.json",
     "projectType": "application",
-    "sourceRoot": "apps/kitchen-sink/src",
-    "prefix": "d",
+    "sourceRoot": "apps/material-schematics-playground/src",
+    "prefix": "mat-sch",
     "targets": {
         "build": {
             "executor": "@angular-devkit/build-angular:browser",
             "outputs": ["{options.outputPath}"],
             "options": {
-                "outputPath": "dist/apps/kitchen-sink",
-                "index": "apps/kitchen-sink/src/index.html",
-                "main": "apps/kitchen-sink/src/main.ts",
-                "polyfills": "apps/kitchen-sink/src/polyfills.ts",
-                "tsConfig": "apps/kitchen-sink/tsconfig.app.json",
+                "outputPath": "dist/apps/material-schematics-playground",
+                "index": "apps/material-schematics-playground/src/index.html",
+                "main": "apps/material-schematics-playground/src/main.ts",
+                "polyfills": "apps/material-schematics-playground/src/polyfills.ts",
+                "tsConfig": "apps/material-schematics-playground/tsconfig.app.json",
+                "inlineStyleLanguage": "scss",
                 "assets": [
-                    "apps/kitchen-sink/src/favicon.ico",
-                    "apps/kitchen-sink/src/assets"
+                    "apps/material-schematics-playground/src/favicon.ico",
+                    "apps/material-schematics-playground/src/assets"
                 ],
-                "styles": ["apps/kitchen-sink/src/styles.css"],
+                "styles": [
+                    "apps/material-schematics-playground/src/styles.scss"
+                ],
                 "scripts": []
             },
             "configurations": {
@@ -37,8 +40,8 @@
                     ],
                     "fileReplacements": [
                         {
-                            "replace": "apps/kitchen-sink/src/environments/environment.ts",
-                            "with": "apps/kitchen-sink/src/environments/environment.prod.ts"
+                            "replace": "apps/material-schematics-playground/src/environments/environment.ts",
+                            "with": "apps/material-schematics-playground/src/environments/environment.prod.ts"
                         }
                     ],
                     "outputHashing": "all"
@@ -58,10 +61,10 @@
             "executor": "@angular-devkit/build-angular:dev-server",
             "configurations": {
                 "production": {
-                    "browserTarget": "kitchen-sink:build:production"
+                    "browserTarget": "material-schematics-playground:build:production"
                 },
                 "development": {
-                    "browserTarget": "kitchen-sink:build:development"
+                    "browserTarget": "material-schematics-playground:build:development"
                 }
             },
             "defaultConfiguration": "development"
@@ -69,53 +72,24 @@
         "extract-i18n": {
             "executor": "@angular-devkit/build-angular:extract-i18n",
             "options": {
-                "browserTarget": "kitchen-sink:build"
+                "browserTarget": "material-schematics-playground:build"
             }
         },
         "lint": {
             "executor": "@nrwl/linter:eslint",
             "options": {
                 "lintFilePatterns": [
-                    "apps/kitchen-sink/**/*.ts",
-                    "apps/kitchen-sink/**/*.html"
+                    "apps/material-schematics-playground/**/*.ts",
+                    "apps/material-schematics-playground/**/*.html"
                 ]
             }
         },
         "test": {
             "executor": "@nrwl/jest:jest",
-            "outputs": ["{workspaceRoot}/coverage/apps/kitchen-sink"],
+            "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
             "options": {
-                "jestConfig": "apps/kitchen-sink/jest.config.ts",
+                "jestConfig": "apps/material-schematics-playground/jest.config.ts",
                 "passWithNoTests": true
-            }
-        },
-        "storybook": {
-            "executor": "@storybook/angular:start-storybook",
-            "options": {
-                "port": 4400,
-                "configDir": "apps/kitchen-sink/.storybook",
-                "browserTarget": "kitchen-sink:build",
-                "compodoc": false
-            },
-            "configurations": {
-                "ci": {
-                    "quiet": true
-                }
-            }
-        },
-        "build-storybook": {
-            "executor": "@storybook/angular:build-storybook",
-            "outputs": ["{options.outputDir}"],
-            "options": {
-                "outputDir": "dist/storybook/kitchen-sink",
-                "configDir": "apps/kitchen-sink/.storybook",
-                "browserTarget": "kitchen-sink:build",
-                "compodoc": false
-            },
-            "configurations": {
-                "ci": {
-                    "quiet": true
-                }
             }
         }
     },
