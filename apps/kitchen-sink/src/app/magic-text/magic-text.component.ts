@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostBinding, OnInit } from '@angular/core';
 import { interval, Observable, repeat } from 'rxjs';
 import { map, scan, take } from 'rxjs/operators';
 import { animate, style, transition, trigger } from '@angular/animations';
@@ -22,6 +22,7 @@ import { animate, style, transition, trigger } from '@angular/animations';
 export class MagicTextComponent implements OnInit {
     private title = 'kitchen sink';
     characters$!: Observable<string[]>;
+    @HostBinding('class') classes = 'block p-5 max-w-4xl text-6xl font-bold tracking-wide';
 
     ngOnInit(): void {
         this.characters$ = interval(400).pipe(
