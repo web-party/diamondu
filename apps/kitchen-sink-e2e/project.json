@@ -1,29 +1,35 @@
 {
-    "name": "kitchen-sink-e2e",
-    "$schema": "../../node_modules/nx/schemas/project-schema.json",
-    "sourceRoot": "apps/kitchen-sink-e2e/src",
-    "projectType": "application",
-    "targets": {
-        "e2e": {
-            "executor": "@nrwl/cypress:cypress",
-            "options": {
-                "cypressConfig": "apps/kitchen-sink-e2e/cypress.json",
-                "devServerTarget": "kitchen-sink:serve:development"
-            },
-            "configurations": {
-                "production": {
-                    "devServerTarget": "kitchen-sink:serve:production"
-                }
-            }
-        },
-        "lint": {
-            "executor": "@nrwl/linter:eslint",
-            "outputs": ["{options.outputFile}"],
-            "options": {
-                "lintFilePatterns": ["apps/kitchen-sink-e2e/**/*.{js,ts}"]
-            }
+  "name": "kitchen-sink-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/kitchen-sink-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/kitchen-sink-e2e/cypress.json",
+        "devServerTarget": "kitchen-sink:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "kitchen-sink:serve:production"
         }
+      }
     },
-    "tags": [],
-    "implicitDependencies": ["kitchen-sink"]
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "apps/kitchen-sink-e2e/**/*.{js,ts}"
+        ]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": [
+    "kitchen-sink"
+  ]
 }

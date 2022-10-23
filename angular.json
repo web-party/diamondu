@@ -1,10 +1,10 @@
 {
-    "$schema": "./node_modules/nx/schemas/workspace-schema.json",
-    "version": 2,
-    "projects": {
-        "kitchen-sink": "apps/kitchen-sink",
-        "kitchen-sink-e2e": "apps/kitchen-sink-e2e",
-        "material-schematics-playground": "apps/material-schematics-playground",
-        "material-schematics-playground-e2e": "apps/material-schematics-playground-e2e"
-    }
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+  "version": 2,
+  "projects": {
+    "kitchen-sink": "apps/kitchen-sink",
+    "kitchen-sink-e2e": "apps/kitchen-sink-e2e",
+    "material-schematics-playground": "apps/material-schematics-playground",
+    "material-schematics-playground-e2e": "apps/material-schematics-playground-e2e"
+  }
 }

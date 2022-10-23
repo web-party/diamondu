@@ -1,97 +1,102 @@
 {
-    "name": "material-schematics-playground",
-    "$schema": "../../node_modules/nx/schemas/project-schema.json",
-    "projectType": "application",
-    "sourceRoot": "apps/material-schematics-playground/src",
-    "prefix": "mat-sch",
-    "targets": {
-        "build": {
-            "executor": "@angular-devkit/build-angular:browser",
-            "outputs": ["{options.outputPath}"],
-            "options": {
-                "outputPath": "dist/apps/material-schematics-playground",
-                "index": "apps/material-schematics-playground/src/index.html",
-                "main": "apps/material-schematics-playground/src/main.ts",
-                "polyfills": "apps/material-schematics-playground/src/polyfills.ts",
-                "tsConfig": "apps/material-schematics-playground/tsconfig.app.json",
-                "inlineStyleLanguage": "scss",
-                "assets": [
-                    "apps/material-schematics-playground/src/favicon.ico",
-                    "apps/material-schematics-playground/src/assets"
-                ],
-                "styles": [
-                    "apps/material-schematics-playground/src/styles.scss"
-                ],
-                "scripts": []
+  "name": "material-schematics-playground",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/material-schematics-playground/src",
+  "prefix": "mat-sch",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/apps/material-schematics-playground",
+        "index": "apps/material-schematics-playground/src/index.html",
+        "main": "apps/material-schematics-playground/src/main.ts",
+        "polyfills": "apps/material-schematics-playground/src/polyfills.ts",
+        "tsConfig": "apps/material-schematics-playground/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/material-schematics-playground/src/favicon.ico",
+          "apps/material-schematics-playground/src/assets"
+        ],
+        "styles": [
+          "apps/material-schematics-playground/src/themes.scss",
+          "apps/material-schematics-playground/src/styles.scss"
+        ],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
             },
-            "configurations": {
-                "production": {
-                    "budgets": [
-                        {
-                            "type": "initial",
-                            "maximumWarning": "500kb",
-                            "maximumError": "1mb"
-                        },
-                        {
-                            "type": "anyComponentStyle",
-                            "maximumWarning": "2kb",
-                            "maximumError": "4kb"
-                        }
-                    ],
-                    "fileReplacements": [
-                        {
-                            "replace": "apps/material-schematics-playground/src/environments/environment.ts",
-                            "with": "apps/material-schematics-playground/src/environments/environment.prod.ts"
-                        }
-                    ],
-                    "outputHashing": "all"
-                },
-                "development": {
-                    "buildOptimizer": false,
-                    "optimization": false,
-                    "vendorChunk": true,
-                    "extractLicenses": false,
-                    "sourceMap": true,
-                    "namedChunks": true
-                }
-            },
-            "defaultConfiguration": "production"
-        },
-        "serve": {
-            "executor": "@angular-devkit/build-angular:dev-server",
-            "configurations": {
-                "production": {
-                    "browserTarget": "material-schematics-playground:build:production"
-                },
-                "development": {
-                    "browserTarget": "material-schematics-playground:build:development"
-                }
-            },
-            "defaultConfiguration": "development"
-        },
-        "extract-i18n": {
-            "executor": "@angular-devkit/build-angular:extract-i18n",
-            "options": {
-                "browserTarget": "material-schematics-playground:build"
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
             }
-        },
-        "lint": {
-            "executor": "@nrwl/linter:eslint",
-            "options": {
-                "lintFilePatterns": [
-                    "apps/material-schematics-playground/**/*.ts",
-                    "apps/material-schematics-playground/**/*.html"
-                ]
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/material-schematics-playground/src/environments/environment.ts",
+              "with": "apps/material-schematics-playground/src/environments/environment.prod.ts"
             }
+          ],
+          "outputHashing": "all"
         },
-        "test": {
-            "executor": "@nrwl/jest:jest",
-            "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
-            "options": {
-                "jestConfig": "apps/material-schematics-playground/jest.config.ts",
-                "passWithNoTests": true
-            }
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
         }
+      },
+      "defaultConfiguration": "production"
     },
-    "tags": []
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "material-schematics-playground:build:production"
+        },
+        "development": {
+          "browserTarget": "material-schematics-playground:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "material-schematics-playground:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/material-schematics-playground/**/*.ts",
+          "apps/material-schematics-playground/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
+      "options": {
+        "jestConfig": "apps/material-schematics-playground/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
 }
