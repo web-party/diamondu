@@ -5,9 +5,15 @@
       [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item routerLink="/">Link 1</a>
-      <a mat-list-item routerLink="/">Link 2</a>
-      <a mat-list-item routerLink="/">Link 3</a>
+      <a mat-list-item routerLink="/">
+          <mat-icon class="mr-1">dashboard</mat-icon>Dashboard
+      </a>
+      <a mat-list-item routerLink="/address-form">
+          <mat-icon class="mr-1">home</mat-icon>Address Form
+      </a>
+      <a mat-list-item routerLink="/settings">
+          <mat-icon class="mr-1">settings</mat-icon>Settings
+      </a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -22,6 +28,6 @@
       </button>
       <span>material-schematics-playground</span>
     </mat-toolbar>
-    <!-- Add Content Here -->
+    <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

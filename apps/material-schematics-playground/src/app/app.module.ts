@@ -11,9 +11,21 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { AppComponent } from './app.component';
 import { GlobalNavComponent } from './global-nav/global-nav.component';
+import { AddressFormComponent } from './address-form/address-form.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatCardModule } from '@angular/material/card';
+import { ReactiveFormsModule } from '@angular/forms';
+import { SettingsComponent } from './settings/settings.component';
 
 @NgModule({
-    declarations: [AppComponent, GlobalNavComponent],
+    declarations: [
+        AppComponent,
+        GlobalNavComponent,
+        AddressFormComponent,
+        SettingsComponent,
+    ],
     imports: [
         BrowserAnimationsModule,
         RouterModule.forRoot(appRoutes, {
@@ -25,6 +37,11 @@ import { GlobalNavComponent } from './global-nav/global-nav.component';
         MatSidenavModule,
         MatIconModule,
         MatListModule,
+        MatInputModule,
+        MatSelectModule,
+        MatRadioModule,
+        MatCardModule,
+        ReactiveFormsModule,
     ],
     providers: [],
     bootstrap: [AppComponent],
