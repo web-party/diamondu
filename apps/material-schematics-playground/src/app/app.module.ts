@@ -18,6 +18,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SettingsComponent } from './settings/settings.component';
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 
 @NgModule({
     declarations: [
@@ -43,7 +44,8 @@ import { SettingsComponent } from './settings/settings.component';
         MatCardModule,
         ReactiveFormsModule,
     ],
-    providers: [],
+    providers: [
+        { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'outline' } }],
     bootstrap: [AppComponent],
 })
 export class AppModule {}
