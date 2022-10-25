@@ -10,31 +10,31 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { GlobalNavComponent } from './global-nav.component';
 
 describe('GlobalNavComponent', () => {
-  let component: GlobalNavComponent;
-  let fixture: ComponentFixture<GlobalNavComponent>;
+    let component: GlobalNavComponent;
+    let fixture: ComponentFixture<GlobalNavComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [GlobalNavComponent],
-      imports: [
-        NoopAnimationsModule,
-        LayoutModule,
-        MatButtonModule,
-        MatIconModule,
-        MatListModule,
-        MatSidenavModule,
-        MatToolbarModule,
-      ]
-    }).compileComponents();
-  }));
+    beforeEach(waitForAsync(() => {
+        TestBed.configureTestingModule({
+            declarations: [GlobalNavComponent],
+            imports: [
+                NoopAnimationsModule,
+                LayoutModule,
+                MatButtonModule,
+                MatIconModule,
+                MatListModule,
+                MatSidenavModule,
+                MatToolbarModule
+            ]
+        }).compileComponents();
+    }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(GlobalNavComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    beforeEach(() => {
+        fixture = TestBed.createComponent(GlobalNavComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
 
-  it('should compile', () => {
-    expect(component).toBeTruthy();
-  });
+    it('should compile', () => {
+        expect(component).toBeTruthy();
+    });
 });
