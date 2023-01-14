@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, HostBinding } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 
@@ -9,6 +9,8 @@ import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DashboardComponent {
+    @HostBinding('class') className = 'block p-5';
+
     /** Based on the screen size, switch from standard to one column per row */
     cards = inject(BreakpointObserver).observe(Breakpoints.Handset).pipe(
         map(({ matches }) => {
