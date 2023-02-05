@@ -1,12 +1,13 @@
-import { moduleMetadata, Story, Meta } from '@storybook/angular';
+import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { MagicTextComponent } from './magic-text.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 export default {
     title: 'MagicTextComponent',
     component: MagicTextComponent,
     decorators: [
         moduleMetadata({
-            imports: [],
+            imports: [BrowserAnimationsModule],
         }),
     ],
 } as Meta<MagicTextComponent>;
