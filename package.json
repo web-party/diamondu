@@ -13,7 +13,6 @@
         "node": "^16.17",
         "npm": ">=8.19"
     },
-    "engineStrict": true,
     "private": true,
     "dependencies": {
         "@angular/animations": "15.1.0",
