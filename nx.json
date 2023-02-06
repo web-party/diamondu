@@ -1,87 +1,87 @@
 {
-  "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "npmScope": "diamondu",
-  "affected": {
-    "defaultBase": "main"
-  },
-  "cli": {
-    "packageManager": "npm"
-  },
-  "tasksRunnerOptions": {
-    "default": {
-      "runner": "@nrwl/nx-cloud",
-      "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e"
+    "$schema": "./node_modules/nx/schemas/nx-schema.json",
+    "npmScope": "diamondu",
+    "affected": {
+        "defaultBase": "main"
+    },
+    "cli": {
+        "packageManager": "npm"
+    },
+    "tasksRunnerOptions": {
+        "default": {
+            "runner": "@nrwl/nx-cloud",
+            "options": {
+                "cacheableOperations": [
+                    "build",
+                    "lint",
+                    "test",
+                    "e2e"
+                ],
+                "accessToken": "NDAwMGVhY2MtYWJhZC00NGQ0LWIyZDQtY2FjYjIyYzU4OWQyfHJlYWQtd3JpdGU="
+            }
+        }
+    },
+    "generators": {
+        "@nrwl/angular:application": {
+            "style": "css",
+            "linter": "eslint",
+            "unitTestRunner": "jest",
+            "e2eTestRunner": "cypress"
+        },
+        "@nrwl/angular:library": {
+            "linter": "eslint",
+            "unitTestRunner": "jest"
+        },
+        "@nrwl/angular:component": {
+            "style": "css"
+        }
+    },
+    "defaultProject": "kitchen-sink",
+    "targetDefaults": {
+        "build": {
+            "dependsOn": [
+                "^build"
+            ],
+            "inputs": [
+                "production",
+                "^production"
+            ]
+        },
+        "e2e": {
+            "inputs": [
+                "default",
+                "^default"
+            ]
+        },
+        "test": {
+            "inputs": [
+                "default",
+                "^default",
+                "{workspaceRoot}/jest.preset.js"
+            ]
+        },
+        "lint": {
+            "inputs": [
+                "default",
+                "{workspaceRoot}/.eslintrc.json"
+            ]
+        },
+        "build-storybook": {
+            "inputs": [
+                "default",
+                "^default",
+                "{workspaceRoot}/.storybook/**/*"
+            ]
+        }
+    },
+    "namedInputs": {
+        "default": [
+            "{projectRoot}/**/*",
+            "sharedGlobals"
         ],
-        "accessToken": "NDAwMGVhY2MtYWJhZC00NGQ0LWIyZDQtY2FjYjIyYzU4OWQyfHJlYWQtd3JpdGU="
-      }
+        "sharedGlobals": [],
+        "production": [
+            "default"
+        ]
     }
-  },
-  "generators": {
-    "@nrwl/angular:application": {
-      "style": "css",
-      "linter": "eslint",
-      "unitTestRunner": "jest",
-      "e2eTestRunner": "cypress"
-    },
-    "@nrwl/angular:library": {
-      "linter": "eslint",
-      "unitTestRunner": "jest"
-    },
-    "@nrwl/angular:component": {
-      "style": "css"
-    }
-  },
-  "defaultProject": "kitchen-sink",
-  "targetDefaults": {
-    "build": {
-      "dependsOn": [
-        "^build"
-      ],
-      "inputs": [
-        "production",
-        "^production"
-      ]
-    },
-    "e2e": {
-      "inputs": [
-        "default",
-        "^default"
-      ]
-    },
-    "test": {
-      "inputs": [
-        "default",
-        "^default",
-        "{workspaceRoot}/jest.preset.js"
-      ]
-    },
-    "lint": {
-      "inputs": [
-        "default",
-        "{workspaceRoot}/.eslintrc.json"
-      ]
-    },
-    "build-storybook": {
-      "inputs": [
-        "default",
-        "^default",
-        "{workspaceRoot}/.storybook/**/*"
-      ]
-    }
-  },
-  "namedInputs": {
-    "default": [
-      "{projectRoot}/**/*",
-      "sharedGlobals"
-    ],
-    "sharedGlobals": [],
-    "production": [
-      "default"
-    ]
-  }
 }
