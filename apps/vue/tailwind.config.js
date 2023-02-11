@@ -1,10 +1,11 @@
 /** @type {import('tailwindcss').Config} */
-const { join } = require('path');
-
 module.exports = {
-    content: [join(__dirname, 'public/index.html'), join(__dirname, 'src/**/*.vue')],
+    content: {
+        relative: true,
+        files: ['./public/index.html', './src/**/*.vue']
+    },
     theme: {
         extend: {},
     },
     plugins: [],
-}
+};
