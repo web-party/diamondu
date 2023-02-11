@@ -46,6 +46,7 @@
         "@angular/compiler-cli": "15.1.0",
         "@angular/language-service": "15.1.0",
         "@faker-js/faker": "^7.6.0",
+        "@mdi/font": "^7.1.96",
         "@nrwl/cli": "15.6.2",
         "@nrwl/cypress": "15.6.2",
         "@nrwl/eslint-plugin-nx": "15.6.2",
