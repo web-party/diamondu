@@ -1,13 +1,16 @@
 <template>
     <BankAccountDetails />
+    <Product />
+    <AvatarStack />
 </template>
 
 <script lang="ts" setup>
     import BankAccountDetails from './components/BankAccountDetails.vue';
+    import Product from './components/Product.vue';
+    import AvatarStack from './components/AvatarStack.vue';
 </script>
 
 <style>
-    @config '../tailwind.config.js';
     @tailwind base;
     @tailwind components;
     @tailwind utilities;

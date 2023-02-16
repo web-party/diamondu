@@ -1,19 +1,20 @@
 <template>
-    <div class="p-3 border border-dashed border-purple-500 max-w-[600px] rounded-lg">
-        <h1 class="text-xl font-medium">Bank account details</h1>
+    <div class="tw-p-3 tw-border tw-border-dashed tw-border-purple-500 tw-max-w-[600px] tw-rounded-lg">
+        <h1 class="tw-text-xl tw-font-medium">Bank account details</h1>
         <dl>
             <div>
-                <dt class="inline-block italic">IBAN:</dt>
-                <dd class="ml-2 inline-block">{{ iban }}</dd>
+                <dt class="tw-inline-block tw-italic">IBAN:</dt>
+                <dd class="tw-ml-2 tw-inline-block">
+                    {{ iban }}
+                    <v-btn variant="plain" icon="mdi-content-copy" size="small" />
+                </dd>
             </div>
         </dl>
     </div>
 </template>
 
 <script setup lang="ts">
-    import { faker } from '@faker-js/faker';
+    import { faker } from '@faker-js/faker/locale/de';
 
     const iban = faker.finance.iban(true, 'DE');
 </script>
-
-<style scoped></style>

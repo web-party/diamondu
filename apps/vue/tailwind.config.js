@@ -4,6 +4,7 @@ module.exports = {
         relative: true,
         files: ['./public/index.html', './src/**/*.vue']
     },
+    prefix: 'tw-',
     theme: {
         extend: {},
     },
