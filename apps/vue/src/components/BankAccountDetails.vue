@@ -1,20 +1,28 @@
 <template>
-    <div class="tw-p-3 tw-border tw-border-dashed tw-border-purple-500 tw-max-w-[600px] tw-rounded-lg">
-        <h1 class="tw-text-xl tw-font-medium">Bank account details</h1>
+    <section class="tw-p-3 tw-border tw-border-dashed tw-border-purple-500 tw-max-w-lg tw-rounded-lg">
+        <h1 class="tw-text-amber-300 tw-text-xl tw-font-semibold">Bank account details</h1>
         <dl>
             <div>
                 <dt class="tw-inline-block tw-italic">IBAN:</dt>
                 <dd class="tw-ml-2 tw-inline-block">
                     {{ iban }}
-                    <v-btn variant="plain" icon="mdi-content-copy" size="small" />
+                    <v-btn @click="copyIban" variant="plain" :icon="iconId" size="small" :disabled="copied" />
                 </dd>
             </div>
         </dl>
-    </div>
+    </section>
 </template>
 
 <script setup lang="ts">
     import { faker } from '@faker-js/faker/locale/de';
+    import { useClipboard } from '@vueuse/core';
+    import { computed } from 'vue';
 
-    const iban = faker.finance.iban(true, 'DE');
+    const iban = faker.finance.iban(true, 'DE'),
+        { copy, copied } = useClipboard({ copiedDuring: 2000 }),
+        iconId = computed(() => `mdi-${copied.value ? 'check' : 'content-copy'}`);
+
+    function copyIban() {
+        copy(iban);
+    }
 </script>
