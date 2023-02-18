@@ -1,8 +1,8 @@
 <template>
+    <AvatarStack />
     <Countdown class="tw-block tw-m-3" />
     <BankAccountDetails />
     <Product />
-    <AvatarStack />
 </template>
 
 <script lang="ts" setup>

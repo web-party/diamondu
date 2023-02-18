@@ -1,10 +1,10 @@
 <!-- for more inspiration, see also `AvatarStack` component in `primer/react` repo -->
 <template>
     <ul>
-        <li v-for="person of persons" :key="person.id" class="tw-inline-block -tw-mr-6">
-            <!-- TODO: use v-avatar instead of img? -->
-            <img alt="" :src="person.url" class="tw-rounded-full tw-border tw-border-white">
-        </li>
+        <v-avatar tag="li" v-for="person of persons" :key="person.id"
+                  :image="person.url" size="x-large"
+                  class="-tw-mr-4 tw-outline tw-outline-white"
+        />
     </ul>
 </template>
 
