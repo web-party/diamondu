@@ -10,8 +10,8 @@
         "test": "nx test"
     },
     "engines": {
-        "node": "^16.17",
-        "npm": ">=8.19"
+        "node": "^18",
+        "npm": ">=9"
     },
     "private": true,
     "dependencies": {
