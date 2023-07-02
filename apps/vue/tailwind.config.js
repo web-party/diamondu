@@ -6,7 +6,16 @@ module.exports = {
     },
     prefix: 'tw-',
     theme: {
-        extend: {},
+        extend: {
+            colors: {
+                purple: {
+                    980: '#1e0730'
+                },
+                red: {
+                    980: '#4c0b0b'
+                }
+            }
+        },
     },
     plugins: [],
 };
