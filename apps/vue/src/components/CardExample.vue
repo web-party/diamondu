@@ -1,5 +1,5 @@
 <template>
-    <v-card :loading="reserving" class="my-12" max-width="374">
+    <v-card :loading="reserving" class="!tw-rounded-xl" max-width="374">
         <template #loader="{ isActive }">
             <v-progress-linear :active="isActive" color="deep-purple" height="4" indeterminate />
         </template>
@@ -65,12 +65,12 @@
     const selection = ref(1);
     const productName = ref(faker.commerce.product());
 
-    const intervalId = setInterval(() => { productName.value = faker.commerce.product(); }, 2000)
+    const intervalId = setInterval(() => { productName.value = faker.commerce.product(); }, 2_000)
 
     function reserve() {
         reserving.value = true;
 
-        setTimeout(() => { reserving.value = false; }, 2000);
+        setTimeout(() => { reserving.value = false; }, 2_000);
     }
 
     onUnmounted(() => { clearInterval(intervalId); });
