@@ -2,7 +2,7 @@
     <ul>
         <li v-for="link of links" :key="link.id">
             <!-- TODO: use v-icon inside anchor -->
-            <a href="link.url">{{ link.label }}</a>
+            <a :href="link.url">{{ link.label }}</a>
         </li>
     </ul>
 </template>
