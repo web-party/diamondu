@@ -11,12 +11,7 @@
         "default": {
             "runner": "@nrwl/nx-cloud",
             "options": {
-                "cacheableOperations": [
-                    "build",
-                    "lint",
-                    "test",
-                    "e2e"
-                ],
+                "cacheableOperations": ["build", "lint", "test", "e2e"],
                 "accessToken": "NDAwMGVhY2MtYWJhZC00NGQ0LWIyZDQtY2FjYjIyYzU4OWQyfHJlYWQtd3JpdGU="
             }
         }
@@ -39,49 +34,25 @@
     "defaultProject": "kitchen-sink",
     "targetDefaults": {
         "build": {
-            "dependsOn": [
-                "^build"
-            ],
-            "inputs": [
-                "production",
-                "^production"
-            ]
+            "dependsOn": ["^build"],
+            "inputs": ["production", "^production"]
         },
         "e2e": {
-            "inputs": [
-                "default",
-                "^default"
-            ]
+            "inputs": ["default", "^default"]
         },
         "test": {
-            "inputs": [
-                "default",
-                "^default",
-                "{workspaceRoot}/jest.preset.js"
-            ]
+            "inputs": ["default", "^default", "{workspaceRoot}/jest.preset.js"]
         },
         "lint": {
-            "inputs": [
-                "default",
-                "{workspaceRoot}/.eslintrc.json"
-            ]
+            "inputs": ["default", "{workspaceRoot}/.eslintrc.json"]
         },
         "build-storybook": {
-            "inputs": [
-                "default",
-                "^default",
-                "{workspaceRoot}/.storybook/**/*"
-            ]
+            "inputs": ["default", "^default", "{workspaceRoot}/.storybook/**/*"]
         }
     },
     "namedInputs": {
-        "default": [
-            "{projectRoot}/**/*",
-            "sharedGlobals"
-        ],
+        "default": ["{projectRoot}/**/*", "sharedGlobals"],
         "sharedGlobals": [],
-        "production": [
-            "default"
-        ]
+        "production": ["default"]
     }
 }
