@@ -26,7 +26,6 @@
         "@angular/platform-browser-dynamic": "15.2.9",
         "@angular/router": "15.2.9",
         "@headlessui/vue": "^1.7.9",
-        "@nrwl/angular": "16.0.3",
         "@vueuse/core": "^9.12.0",
         "chart.js": "^3.9.1",
         "date-fns": "^2.29.3",
@@ -37,7 +36,8 @@
         "tslib": "^2.3.0",
         "vue": "^3.3.4",
         "vuetify": "^3.3.5",
-        "zone.js": "0.12.0"
+        "zone.js": "0.12.0",
+        "@nx/angular": "16.0.3"
     },
     "devDependencies": {
         "@angular-devkit/build-angular": "15.2.9",
