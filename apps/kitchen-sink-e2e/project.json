@@ -5,7 +5,7 @@
     "projectType": "application",
     "targets": {
         "e2e": {
-            "executor": "@nrwl/cypress:cypress",
+            "executor": "@nx/cypress:cypress",
             "options": {
                 "cypressConfig": "apps/kitchen-sink-e2e/cypress.json",
                 "devServerTarget": "kitchen-sink:serve:development"

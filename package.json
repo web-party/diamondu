@@ -51,7 +51,6 @@
         "@angular/language-service": "15.2.9",
         "@faker-js/faker": "^7.6.0",
         "@mdi/font": "^7.1.96",
-        "@nrwl/cypress": "16.0.3",
         "@nrwl/eslint-plugin-nx": "16.0.3",
         "@nrwl/jest": "16.0.3",
         "@nrwl/storybook": "16.0.3",
@@ -95,6 +94,7 @@
         "webpack": "^5.64.0",
         "nx-cloud": "16.0.5",
         "@nx/workspace": "16.0.3",
-        "@nx/linter": "16.0.3"
+        "@nx/linter": "16.0.3",
+        "@nx/cypress": "16.0.3"
     }
 }
