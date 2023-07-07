@@ -47,7 +47,13 @@
             "inputs": ["default", "{workspaceRoot}/.eslintrc.json"]
         },
         "build-storybook": {
-            "inputs": ["default", "^default", "{workspaceRoot}/.storybook/**/*"]
+            "inputs": [
+                "default",
+                "^default",
+                "{workspaceRoot}/.storybook/**/*",
+                "{projectRoot}/.storybook/**/*",
+                "{projectRoot}/tsconfig.storybook.json"
+            ]
         }
     },
     "namedInputs": {
@@ -57,7 +63,10 @@
             "default",
             "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
             "!{projectRoot}/tsconfig.spec.json",
-            "!{projectRoot}/src/test-setup.[jt]s"
+            "!{projectRoot}/src/test-setup.[jt]s",
+            "!{projectRoot}/**/*.stories.@(js|jsx|ts|tsx|mdx)",
+            "!{projectRoot}/.storybook/**/*",
+            "!{projectRoot}/tsconfig.storybook.json"
         ]
     }
 }
