@@ -6,6 +6,7 @@
             <BankAccountDetails/>
             <CollectionLayoutSwitch class="tw-mt-4"/>
         </div>
+        <ProductList/>
     </main>
 </template>
 
@@ -14,6 +15,7 @@
     import AvatarStack from './components/AvatarStack.vue';
     import Countdown from './components/Countdown.vue';
     import CollectionLayoutSwitch from './components/CollectionLayoutSwitch.vue';
+    import ProductList from './components/ProductList.vue';
 </script>
 
 <style>
