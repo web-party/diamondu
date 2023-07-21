@@ -4,6 +4,7 @@
             <AvatarStack />
             <Countdown class="tw-block" />
             <BankAccountDetails />
+            <SocialLinks />
         </section>
         <section class="lg:tw-col-span-2 tw-space-y-4">
             <CollectionLayoutSwitch />
@@ -18,6 +19,7 @@
     import Countdown from './components/Countdown.vue';
     import CollectionLayoutSwitch from './components/CollectionLayoutSwitch.vue';
     import ProductCollection from './components/ProductCollection.vue';
+    import SocialLinks from './components/SocialLinks.vue';
 </script>
 
 <style>
