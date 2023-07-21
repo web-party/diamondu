@@ -1,6 +1,6 @@
 <!-- for more inspiration, see also `AvatarStack` component in `primer/react` repo -->
 <template>
-    <ul>
+    <ul aria-label="Avatar stack">
         <v-avatar tag="li" v-for="person of persons" :key="person.id"
                   :image="person.url" size="x-large"
                   class="-tw-mr-4 tw-outline tw-outline-white"

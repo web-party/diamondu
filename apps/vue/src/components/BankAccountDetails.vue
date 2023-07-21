@@ -1,6 +1,6 @@
 <template>
-    <section class="tw-p-3 tw-border tw-border-dashed tw-border-purple-500 tw-max-w-lg tw-rounded-lg">
-        <h1 class="tw-text-amber-300 tw-text-xl tw-font-semibold">Bank account details</h1>
+    <section class="tw-p-3 tw-border tw-border-dashed tw-border-purple-500 tw-max-w-lg tw-rounded-lg" aria-labelledby="bank-account-details">
+        <h1 id="bank-account-details" class="tw-text-amber-300 tw-text-xl tw-font-semibold">Bank account details</h1>
         <dl>
             <div>
                 <dt class="tw-inline-block tw-italic">IBAN:</dt>
