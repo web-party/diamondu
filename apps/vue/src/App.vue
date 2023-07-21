@@ -7,7 +7,7 @@
         </section>
         <section class="lg:tw-col-span-2 tw-space-y-4">
             <CollectionLayoutSwitch />
-            <ProductList />
+            <ProductCollection />
         </section>
     </main>
 </template>
@@ -17,7 +17,7 @@
     import AvatarStack from './components/AvatarStack.vue';
     import Countdown from './components/Countdown.vue';
     import CollectionLayoutSwitch from './components/CollectionLayoutSwitch.vue';
-    import ProductList from './components/ProductList.vue';
+    import ProductCollection from './components/ProductCollection.vue';
 </script>
 
 <style>

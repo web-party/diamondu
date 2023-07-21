@@ -18,10 +18,10 @@
     import { ref } from 'vue';
 
     type Product = {
-        id: number;
-        name: string;
-        imageUrl: string;
-        description: string;
+        id: number,
+        name: string,
+        imageUrl: string,
+        description: string
     };
 
     const loading = ref(true);
