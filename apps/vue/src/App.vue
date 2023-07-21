@@ -1,12 +1,14 @@
 <template>
-    <main class="tw-grid tw-gap-4 tw-grid-cols-1 md:tw-grid-cols-2">
-        <div>
-            <AvatarStack/>
-            <Countdown class="tw-block tw-m-4"/>
-            <BankAccountDetails/>
-            <CollectionLayoutSwitch class="tw-mt-4"/>
-        </div>
-        <ProductList/>
+    <main class="tw-grid tw-gap-4 tw-grid-cols-1 lg:tw-grid-cols-3">
+        <section class="lg:tw-col-span-1 tw-space-y-4">
+            <AvatarStack />
+            <Countdown class="tw-block" />
+            <BankAccountDetails />
+        </section>
+        <section class="lg:tw-col-span-2 tw-space-y-4">
+            <CollectionLayoutSwitch />
+            <ProductList />
+        </section>
     </main>
 </template>
 
