@@ -6,7 +6,7 @@
                 <dt class="tw-inline-block tw-italic">IBAN:</dt>
                 <dd class="tw-ml-2 tw-inline-block">
                     {{ iban }}
-                    <v-btn @click="copyIban" variant="plain" :icon="iconId" size="small" :disabled="copied" />
+                    <v-btn @click="copy(iban)" variant="plain" :icon="iconId" size="small" :disabled="copied" />
                 </dd>
             </div>
         </dl>
@@ -21,8 +21,4 @@
     const iban = faker.finance.iban(true, 'DE'),
         { copy, copied } = useClipboard({ copiedDuring: 2000 }),
         iconId = computed(() => `mdi-${copied.value ? 'check' : 'content-copy'}`);
-
-    function copyIban() {
-        copy(iban);
-    }
 </script>
