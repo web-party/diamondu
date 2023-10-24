@@ -1,9 +1,9 @@
 <template>
     <ul class="tw-grid tw-grid-cols-1 sm:tw-grid-cols-2 md:tw-grid-cols-3 tw-gap-4">
         <li v-for="product of products" :key="product.id">
-            <v-skeleton-loader :loading="loading" type="card">
-                <v-card>
-                    <v-img :src="product.imageUrl" :cover="true" />
+            <v-skeleton-loader :loading="loading" type="card, paragraph" class="tw-h-full">
+                <v-card class="tw-h-full">
+                    <v-img :src="product.imageUrl" cover />
                     <v-card-title>{{ product.name }}</v-card-title>
                     <v-card-text>{{ product.description }}</v-card-text>
                 </v-card>
@@ -26,13 +26,13 @@
 
     const loading = ref(true);
 
-    setTimeout(() => { loading.value = false }, 1000);
+    setTimeout(() => { loading.value = false }, 2_000);
 
     const products = ref([...new Array(12)].map<Product>((_, i) => {
         return {
             id: i,
             name: faker.commerce.product(),
-            imageUrl: faker.image.urlLoremFlickr({ category: 'tech' }),
+            imageUrl: faker.image.urlLoremFlickr({ category: 'computer' }),
             description: faker.commerce.productDescription()
         };
     }));

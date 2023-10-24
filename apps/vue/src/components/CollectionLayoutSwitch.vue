@@ -9,8 +9,8 @@
     import { ref, watch } from 'vue';
 
     enum CollectionLayout { grid, list }
-    const emit = defineEmits<{(event: 'view', val: CollectionLayout): void}>();
+    const emit = defineEmits<{ (event: 'switchLayout', val: CollectionLayout): void }>();
 
     const layout = ref<CollectionLayout>(CollectionLayout.grid);
-    watch(layout, newVal => { emit('view', newVal); });
+    watch(layout, newVal => { emit('switchLayout', newVal); });
 </script>
