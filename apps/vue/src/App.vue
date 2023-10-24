@@ -5,6 +5,7 @@
             <Countdown class="tw-block" />
             <BankAccountDetails />
             <SocialLinks />
+            <ThemeToggle />
         </section>
         <section class="lg:tw-col-span-2 tw-space-y-4">
             <CollectionLayoutSwitch />
@@ -20,9 +21,10 @@
     import CollectionLayoutSwitch from './components/CollectionLayoutSwitch.vue';
     import ProductCollection from './components/ProductCollection.vue';
     import SocialLinks from './components/SocialLinks.vue';
+    import ThemeToggle from './components/ThemeToggle.vue';
 </script>
 
-<style>
+<style lang="postcss">
     @tailwind base;
     @tailwind components;
     @tailwind utilities;
