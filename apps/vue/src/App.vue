@@ -1,6 +1,6 @@
 <template>
     <main class="tw-grid tw-gap-4 tw-grid-cols-1 lg:tw-grid-cols-3">
-        <section class="lg:tw-col-span-1 tw-space-y-4">
+        <section class="lg:tw-col-span-1 tw-space-y-5">
             <AvatarStack />
             <Countdown class="tw-block" />
             <BankAccountDetails />
