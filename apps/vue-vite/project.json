@@ -1,0 +1,78 @@
+{
+    "name": "vue-vite",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "application",
+    "sourceRoot": "apps/vue-vite/src",
+    "targets": {
+        "lint": {
+            "executor": "@nx/eslint:lint",
+            "outputs": ["{options.outputFile}"],
+            "options": {
+                "lintFilePatterns": ["apps/vue-vite/**/*.{ts,tsx,js,jsx,vue}"]
+            }
+        },
+        "build": {
+            "executor": "@nx/vite:build",
+            "outputs": ["{options.outputPath}"],
+            "defaultConfiguration": "production",
+            "options": {
+                "outputPath": "dist/apps/vue-vite",
+                "skipTypeCheck": true
+            },
+            "configurations": {
+                "development": {
+                    "mode": "development"
+                },
+                "production": {
+                    "mode": "production"
+                }
+            }
+        },
+        "serve": {
+            "executor": "@nx/vite:dev-server",
+            "defaultConfiguration": "development",
+            "options": {
+                "buildTarget": "vue-vite:build"
+            },
+            "configurations": {
+                "development": {
+                    "buildTarget": "vue-vite:build:development",
+                    "hmr": true
+                },
+                "production": {
+                    "buildTarget": "vue-vite:build:production",
+                    "hmr": false
+                }
+            }
+        },
+        "preview": {
+            "executor": "@nx/vite:preview-server",
+            "defaultConfiguration": "development",
+            "options": {
+                "buildTarget": "vue-vite:build"
+            },
+            "configurations": {
+                "development": {
+                    "buildTarget": "vue-vite:build:development"
+                },
+                "production": {
+                    "buildTarget": "vue-vite:build:production"
+                }
+            }
+        },
+        "test": {
+            "executor": "@nx/vite:test",
+            "outputs": ["{options.reportsDirectory}"],
+            "options": {
+                "passWithNoTests": true,
+                "reportsDirectory": "../../coverage/apps/vue-vite"
+            }
+        },
+        "serve-static": {
+            "executor": "@nx/web:file-server",
+            "options": {
+                "buildTarget": "vue-vite:build"
+            }
+        }
+    }
+}
