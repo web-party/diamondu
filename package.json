@@ -59,6 +59,7 @@
         "@nx/linter": "16.10.0",
         "@nx/storybook": "16.10.0",
         "@nx/vite": "16.10.0",
+        "@nx/vue": "^17.0.2",
         "@nx/workspace": "16.10.0",
         "@schematics/angular": "16.2.8",
         "@storybook/addon-essentials": "7.5.1",
