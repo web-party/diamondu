@@ -1,10 +1,10 @@
 import { rootMain } from '../../../.storybook/main';
-import type { StorybookConfig, Options } from '@storybook/core-common';
+import type { StorybookConfig } from '@storybook/angular';
 
 const config: StorybookConfig = {
     ...rootMain,
 
-    core: { ...rootMain.core, builder: 'webpack5' },
+    core: { ...rootMain.core, builder: '@storybook/builder-webpack5' },
 
     stories: [
         ...rootMain.stories,
@@ -12,18 +12,6 @@ const config: StorybookConfig = {
         '../src/app/**/*.stories.@(js|jsx|ts|tsx)',
     ],
     addons: ['@storybook/addon-essentials', ...(rootMain.addons || [])],
-    webpackFinal: async (config, { configType }: Options) => {
-        // apply any global webpack configs that might have been specified in .storybook/main.ts
-        if (rootMain.webpackFinal) {
-            config = await rootMain.webpackFinal(config, {
-                configType,
-            } as Options);
-        }
-
-        // add your own webpack tweaks if needed
-
-        return config;
-    },
 };
 
-module.exports = config;
+export default config;
