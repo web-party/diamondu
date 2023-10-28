@@ -8,8 +8,19 @@ module.exports = {
         join(__dirname, 'src/**/*!(*.stories|*.spec).{vue,ts,tsx,js,jsx}'),
         ...createGlobPatternsForDependencies(__dirname),
     ],
+    prefix: 'tw-',
+    darkMode: 'class',
     theme: {
-        extend: {},
+        extend: {
+            colors: {
+                purple: {
+                    980: '#1e0730'
+                },
+                red: {
+                    980: '#4c0b0b'
+                }
+            }
+        },
     },
     plugins: [],
 };
