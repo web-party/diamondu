@@ -1,20 +1,10 @@
 {
     "$schema": "./node_modules/nx/schemas/nx-schema.json",
-    "npmScope": "diamondu",
     "affected": {
         "defaultBase": "main"
     },
     "cli": {
         "packageManager": "npm"
-    },
-    "tasksRunnerOptions": {
-        "default": {
-            "runner": "nx-cloud",
-            "options": {
-                "cacheableOperations": ["build", "lint", "test", "e2e"],
-                "accessToken": "NDAwMGVhY2MtYWJhZC00NGQ0LWIyZDQtY2FjYjIyYzU4OWQyfHJlYWQtd3JpdGU="
-            }
-        }
     },
     "generators": {
         "@nx/angular:application": {
@@ -35,16 +25,20 @@
     "targetDefaults": {
         "build": {
             "dependsOn": ["^build"],
-            "inputs": ["production", "^production"]
+            "inputs": ["production", "^production"],
+            "cache": true
         },
         "e2e": {
-            "inputs": ["default", "^default"]
+            "inputs": ["default", "^default"],
+            "cache": true
         },
         "test": {
-            "inputs": ["default", "^default", "{workspaceRoot}/jest.preset.js"]
+            "inputs": ["default", "^default", "{workspaceRoot}/jest.preset.js"],
+            "cache": true
         },
         "lint": {
-            "inputs": ["default", "{workspaceRoot}/.eslintrc.json"]
+            "inputs": ["default", "{workspaceRoot}/.eslintrc.json"],
+            "cache": true
         },
         "build-storybook": {
             "inputs": [
@@ -68,5 +62,6 @@
             "!{projectRoot}/.storybook/**/*",
             "!{projectRoot}/tsconfig.storybook.json"
         ]
-    }
+    },
+    "nxCloudAccessToken": "NDAwMGVhY2MtYWJhZC00NGQ0LWIyZDQtY2FjYjIyYzU4OWQyfHJlYWQtd3JpdGU="
 }
