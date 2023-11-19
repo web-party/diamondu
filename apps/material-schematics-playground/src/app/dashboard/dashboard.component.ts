@@ -3,7 +3,7 @@ import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 
 @Component({
-    selector: 'mat-sch-dashboard',
+    selector: 'sch-dashboard',
     templateUrl: './dashboard.component.html',
     styleUrls: ['./dashboard.component.css'],
     changeDetection: ChangeDetectionStrategy.OnPush

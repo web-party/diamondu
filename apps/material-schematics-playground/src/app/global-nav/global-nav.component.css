@@ -1,5 +1,6 @@
-.active {
-    background-color: indigo;
+.active::before {
+    background-color: var(--mdc-list-list-item-focus-state-layer-color);
+    opacity: var(--mdc-list-list-item-focus-state-layer-opacity);
 }
 
 .sidenav-container {

@@ -21,7 +21,7 @@
                     "error",
                     {
                         "type": "element",
-                        "prefix": "mat-sch",
+                        "prefix": "sch",
                         "style": "kebab-case"
                     }
                 ]

@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 
 @Component({
-    selector: 'mat-sch-global-nav',
+    selector: 'sch-global-nav',
     templateUrl: './global-nav.component.html',
     styleUrls: ['./global-nav.component.css'],
     changeDetection: ChangeDetectionStrategy.OnPush

@@ -3,7 +3,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 /* eslint-disable */
 
 @Component({
-    selector: 'mat-sch-nx-welcome',
+    selector: 'sch-nx-welcome',
     template: `
         <!--
      * * * * * * * * * * * * * * * * * * * * * * * * * * * *
