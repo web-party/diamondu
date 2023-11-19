@@ -58,10 +58,10 @@
             "executor": "@angular-devkit/build-angular:dev-server",
             "configurations": {
                 "production": {
-                    "browserTarget": "kitchen-sink:build:production"
+                    "buildTarget": "kitchen-sink:build:production"
                 },
                 "development": {
-                    "browserTarget": "kitchen-sink:build:development"
+                    "buildTarget": "kitchen-sink:build:development"
                 }
             },
             "defaultConfiguration": "development"
@@ -69,7 +69,7 @@
         "extract-i18n": {
             "executor": "@angular-devkit/build-angular:extract-i18n",
             "options": {
-                "browserTarget": "kitchen-sink:build"
+                "buildTarget": "kitchen-sink:build"
             }
         },
         "lint": {
@@ -85,8 +85,7 @@
             "executor": "@nx/jest:jest",
             "outputs": ["{workspaceRoot}/coverage/apps/kitchen-sink"],
             "options": {
-                "jestConfig": "apps/kitchen-sink/jest.config.ts",
-                "passWithNoTests": true
+                "jestConfig": "apps/kitchen-sink/jest.config.ts"
             }
         },
         "storybook": {
