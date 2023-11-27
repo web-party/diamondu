@@ -19,7 +19,6 @@
 
 <script lang="ts" setup>
     import { faker } from '@faker-js/faker/locale/de';
-    import { VSkeletonLoader } from 'vuetify/labs/VSkeletonLoader';
     import { ref } from 'vue';
 
     type Product = {
