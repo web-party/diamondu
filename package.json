@@ -74,7 +74,6 @@
         "@vitejs/plugin-vue": "^4.3.1",
         "@vitest/coverage-c8": "~0.32.0",
         "@vitest/ui": "0.32.4",
-        "@vue/cli-service": "~5.0.8",
         "@vue/eslint-config-prettier": "7.1.0",
         "@vue/eslint-config-typescript": "^11.0.3",
         "@vue/test-utils": "^2.4.1",
