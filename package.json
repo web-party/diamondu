@@ -41,13 +41,13 @@
         "zone.js": "0.14.2"
     },
     "devDependencies": {
-        "@angular-devkit/build-angular": "17.0.1",
-        "@angular-devkit/core": "17.0.1",
-        "@angular-devkit/schematics": "17.0.1",
+        "@angular-devkit/build-angular": "17.0.3",
+        "@angular-devkit/core": "17.0.3",
+        "@angular-devkit/schematics": "17.0.3",
         "@angular-eslint/eslint-plugin": "17.0.1",
         "@angular-eslint/eslint-plugin-template": "17.0.1",
         "@angular-eslint/template-parser": "17.0.1",
-        "@angular/cli": "~17.0.0",
+        "@angular/cli": "17.0.3",
         "@angular/compiler-cli": "17.0.3",
         "@angular/language-service": "17.0.3",
         "@mdi/font": "^7.1.96",
@@ -63,7 +63,7 @@
         "@schematics/angular": "17.0.1",
         "@storybook/addon-essentials": "7.5.3",
         "@storybook/angular": "7.5.3",
-        "@storybook/builder-webpack5": "7.0.24",
+        "@storybook/builder-webpack5": "7.5.3",
         "@storybook/core-server": "7.5.3",
         "@storybook/manager-webpack5": "6.5.16",
         "@swc-node/register": "~1.6.7",
@@ -111,10 +111,5 @@
         "vitest": "0.32.4",
         "vue-tsc": "^1.8.8",
         "webpack": "^5.64.0"
-    },
-    "overrides": {
-        "@vue/cli-plugin-typescript@~5.0.8": {
-            "fork-ts-checker-webpack-plugin": "6.5.3"
-        }
     }
 }
