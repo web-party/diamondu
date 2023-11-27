@@ -2,8 +2,8 @@
 <template>
     <ul aria-label="Avatar stack">
         <v-avatar tag="li" v-for="person of persons" :key="person.id"
-                  :image="person.url" size="x-large"
-                  class="-tw-mr-4 tw-outline tw-outline-white"
+                  :image="person.url" size="x-large" variant="outlined"
+                  class="-tw-mr-4 !tw-border-4 !tw-bg-white"
         />
     </ul>
 </template>
