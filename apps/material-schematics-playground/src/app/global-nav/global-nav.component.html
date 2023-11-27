@@ -1,9 +1,9 @@
-<mat-sidenav-container class="sidenav-container">
-    <mat-sidenav #drawer class="sidenav" fixedInViewport
+<mat-sidenav-container class="tw-h-full">
+    <mat-sidenav #drawer class="tw-w-[25ch]" fixedInViewport
                  [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
                  [mode]="(isHandset$ | async) ? 'over' : 'side'"
                  [opened]="(isHandset$ | async) === false">
-        <mat-toolbar>Menu</mat-toolbar>
+        <mat-toolbar class="tw-bg-inherit">Menu</mat-toolbar>
         <mat-nav-list>
             <a mat-list-item routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
                 <mat-icon class="mr-1">dashboard</mat-icon>
@@ -20,7 +20,7 @@
         </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
-        <mat-toolbar color="primary">
+        <mat-toolbar color="primary" class="tw-sticky tw-top-0 tw-z-10">
             <button
                 type="button"
                 aria-label="Toggle sidenav"
@@ -31,6 +31,6 @@
             </button>
             <span>Material Schematics Playground</span>
         </mat-toolbar>
-        <router-outlet></router-outlet>
+        <router-outlet />
     </mat-sidenav-content>
 </mat-sidenav-container>
