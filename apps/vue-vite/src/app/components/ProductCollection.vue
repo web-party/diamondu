@@ -1,14 +1,19 @@
 <template>
     <ul class="tw-grid tw-grid-cols-1 sm:tw-grid-cols-2 md:tw-grid-cols-3 tw-gap-4">
-        <li v-for="product of products" :key="product.id">
-            <v-skeleton-loader :loading="loading" type="card, paragraph" class="tw-h-full">
+        <template v-if="loading">
+            <li v-for="item in 5" :key="item">
+                <v-skeleton-loader type="card, paragraph" class="tw-h-full" />
+            </li>
+        </template>
+        <template v-else>
+            <li v-for="product of products" :key="product.id">
                 <v-card class="tw-h-full">
                     <v-img :src="product.imageUrl" cover />
                     <v-card-title>{{ product.name }}</v-card-title>
                     <v-card-text>{{ product.description }}</v-card-text>
                 </v-card>
-            </v-skeleton-loader>
-        </li>
+            </li>
+        </template>
     </ul>
 </template>
 
