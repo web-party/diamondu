@@ -3,19 +3,16 @@
                  [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
                  [mode]="(isHandset$ | async) ? 'over' : 'side'"
                  [opened]="(isHandset$ | async) === false">
-        <mat-toolbar class="tw-bg-inherit">Menu</mat-toolbar>
+        <mat-toolbar>Menu</mat-toolbar>
         <mat-nav-list>
             <a mat-list-item routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-                <mat-icon class="mr-1">dashboard</mat-icon>
-                Dashboard
+                <mat-icon matListItemIcon class="!tw-mr-3">dashboard</mat-icon>Dashboard
             </a>
             <a mat-list-item routerLink="/address-form" routerLinkActive="active">
-                <mat-icon class="mr-1">home</mat-icon>
-                Address Form
+                <mat-icon matListItemIcon class="!tw-mr-3">home</mat-icon>Address Form
             </a>
             <a mat-list-item routerLink="/settings" routerLinkActive="active">
-                <mat-icon class="mr-1">settings</mat-icon>
-                Settings
+                <mat-icon matListItemIcon class="!tw-mr-3">settings</mat-icon>Settings
             </a>
         </mat-nav-list>
     </mat-sidenav>
