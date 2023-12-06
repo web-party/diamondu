@@ -11,7 +11,7 @@
 <script setup lang="ts">
     import { faker } from '@faker-js/faker/locale/de';
 
-    const persons = [...new Array(6)].map((_, i) => {
-        return { id: i, url: faker.image.avatar() };
+    const persons = [...new Array(6)].map(() => {
+        return { id: Symbol(), url: faker.image.avatar() };
     });
 </script>
