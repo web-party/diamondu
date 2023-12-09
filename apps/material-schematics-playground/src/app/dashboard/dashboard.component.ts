@@ -5,11 +5,10 @@ import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 @Component({
     selector: 'sch-dashboard',
     templateUrl: './dashboard.component.html',
-    styleUrls: ['./dashboard.component.css'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DashboardComponent {
-    @HostBinding('class') className = 'block p-5';
+    @HostBinding('class') className = 'tw-block tw-p-5';
 
     /** Based on the screen size, switch from standard to one column per row */
     cards = inject(BreakpointObserver).observe(Breakpoints.Handset).pipe(
