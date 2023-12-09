@@ -4,7 +4,7 @@
         "emitDecoratorMetadata": true
     },
     "files": ["../src/polyfills.ts"],
-    "exclude": ["../**/*.spec.ts"],
+    "exclude": ["../**/*.spec.ts", "main.ts"],
     "include": [
         "../src/**/*.stories.ts",
         "../src/**/*.stories.js",

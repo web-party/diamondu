@@ -1,22 +1,12 @@
-import { Meta, moduleMetadata, Story } from '@storybook/angular';
-import { NgChartsModule } from 'ng2-charts';
+import type { Meta, StoryObj } from '@storybook/angular';
 import { CompareGhUsersStarsComponent } from './compare-gh-users-stars.component';
 
-export default {
-    title: 'CompareGhUsersStarsComponent',
+const meta: Meta<CompareGhUsersStarsComponent> = {
+    title: 'compare GH users stars',
     component: CompareGhUsersStarsComponent,
-    decorators: [
-        moduleMetadata({
-            imports: [NgChartsModule],
-        }),
-    ],
-} as Meta<CompareGhUsersStarsComponent>;
+};
 
-const Template: Story<CompareGhUsersStarsComponent> = (
-    args: CompareGhUsersStarsComponent
-) => ({
-    props: args,
-});
+export default meta;
+type Story =  StoryObj<CompareGhUsersStarsComponent>;
 
-export const Primary = Template.bind({});
-Primary.args = {};
+export const Primary: Story = {};

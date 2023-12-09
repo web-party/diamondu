@@ -1,1 +1,3 @@
-<span @fadeInChar *ngFor="let char of characters$ | async">{{ char }}</span>
+@for (char of characters$ | async; track char) {
+    <span @fadeInChar>{{ char }}</span>
+}

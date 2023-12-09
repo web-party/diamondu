@@ -1,20 +1,19 @@
-import { Meta, moduleMetadata, Story } from '@storybook/angular';
+import { applicationConfig, type Meta, type StoryObj } from '@storybook/angular';
+import { provideAnimations } from '@angular/platform-browser/animations';
 import { MagicTextComponent } from './magic-text.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-export default {
-    title: 'MagicTextComponent',
+const meta: Meta<MagicTextComponent> = {
+    title: 'Magic text',
     component: MagicTextComponent,
     decorators: [
-        moduleMetadata({
-            imports: [BrowserAnimationsModule],
+        applicationConfig({
+            // List of providers and environment providers that should be available to the root component and all its children.
+            providers: [provideAnimations()],
         }),
     ],
-} as Meta<MagicTextComponent>;
+};
 
-const Template: Story<MagicTextComponent> = (args: MagicTextComponent) => ({
-    props: args,
-});
+export default meta;
+type Story = StoryObj<MagicTextComponent>;
 
-export const Primary = Template.bind({});
-Primary.args = {};
+export const Primary: Story = {};

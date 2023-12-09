@@ -2,11 +2,11 @@ import { ChangeDetectionStrategy, Component, HostBinding, OnInit } from '@angula
 import { interval, Observable } from 'rxjs';
 import { map, repeat, scan, take } from 'rxjs/operators';
 import { animate, style, transition, trigger } from '@angular/animations';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
     selector: 'd-magic-text',
     templateUrl: './magic-text.component.html',
-    styleUrls: ['./magic-text.component.css'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     animations: [
         trigger('fadeInChar', [
@@ -15,7 +15,9 @@ import { animate, style, transition, trigger } from '@angular/animations';
                 animate('300ms ease-in', style({ opacity: 1 }))
             ])
         ])
-    ]
+    ],
+    standalone: true,
+    imports: [AsyncPipe]
 })
 export class MagicTextComponent implements OnInit {
     private title = 'kitchen sink';
