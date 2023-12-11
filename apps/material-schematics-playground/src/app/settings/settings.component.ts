@@ -1,9 +1,10 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostBinding } from '@angular/core';
 
 @Component({
     selector: 'sch-settings',
     templateUrl: './settings.component.html',
-    styleUrls: ['./settings.component.css'],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SettingsComponent {}
+export class SettingsComponent {
+    @HostBinding('class') classes = 'tw-block tw-p-5';
+}

@@ -2,17 +2,24 @@ import { Component, ChangeDetectionStrategy, inject, HostBinding } from '@angula
 import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 
+type Card = {
+    title: string,
+    cols: number,
+    rows: number,
+    hidden?: boolean
+};
+
 @Component({
     selector: 'sch-dashboard',
     templateUrl: './dashboard.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DashboardComponent {
-    @HostBinding('class') className = 'tw-block tw-p-5';
+    @HostBinding('class') classes = 'tw-block tw-p-5';
 
     /** Based on the screen size, switch from standard to one column per row */
     cards = inject(BreakpointObserver).observe(Breakpoints.Handset).pipe(
-        map(({ matches }) => {
+        map(({ matches }): Card[] => {
             if (matches) {
                 return [
                     { title: 'Card 1', cols: 1, rows: 1 },
