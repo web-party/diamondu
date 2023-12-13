@@ -1,22 +1,25 @@
 <h1 class="mat-h1">Dashboard</h1>
 <mat-grid-list gutterSize="16" cols="2" rowHeight="350px">
-    <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
-        <mat-card appearance="outlined" class="tw-w-full tw-h-full" [class.!tw-hidden]="card.hidden">
-            <mat-card-header>
-                <mat-card-title>
-                    {{ card.title }}
-                    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="More actions" class="!tw-absolute tw-top-1 tw-right-2">
-                        <mat-icon>more_vert</mat-icon>
-                    </button>
-                    <mat-menu #menu="matMenu" xPosition="before">
-                        <button mat-menu-item>Expand</button>
-                        <button mat-menu-item (click)="card.hidden = true">Remove</button>
-                    </mat-menu>
-                </mat-card-title>
-            </mat-card-header>
-            <mat-card-content class="tw-text-center">
-                Card Content Here
-            </mat-card-content>
-        </mat-card>
-    </mat-grid-tile>
+    @for (card of cards | async; track card) {
+        <mat-grid-tile [colspan]="card.cols" [rowspan]="card.rows">
+            <mat-card appearance="outlined" class="tw-w-full tw-h-full" [class.!tw-hidden]="card.hidden">
+                <mat-card-header>
+                    <mat-card-title>
+                        {{ card.title }}
+                        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="More actions"
+                                class="!tw-absolute tw-top-1 tw-right-2">
+                            <mat-icon>more_vert</mat-icon>
+                        </button>
+                        <mat-menu #menu="matMenu" xPosition="before">
+                            <button mat-menu-item>Expand</button>
+                            <button mat-menu-item (click)="card.hidden = true">Remove</button>
+                        </mat-menu>
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content class="tw-text-center">
+                    Card Content Here
+                </mat-card-content>
+            </mat-card>
+        </mat-grid-tile>
+    }
 </mat-grid-list>
