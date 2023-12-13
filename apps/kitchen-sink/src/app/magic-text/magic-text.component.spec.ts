@@ -1,16 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { MagicTextComponent } from './magic-text.component';
 
 describe('MagicTextComponent', () => {
     let component: MagicTextComponent;
     let fixture: ComponentFixture<MagicTextComponent>;
-
-    beforeEach(async () => {
-        await TestBed.configureTestingModule({
-            declarations: [MagicTextComponent],
-        }).compileComponents();
-    });
 
     beforeEach(() => {
         fixture = TestBed.createComponent(MagicTextComponent);
