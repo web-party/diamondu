@@ -25,7 +25,10 @@
         id: number,
         name: string,
         imageUrl: string,
-        description: string
+        description: string,
+        originalPrice?: number,
+        discountPrice?: number,
+        liked?: boolean
     };
 
     const loading = ref(true);
