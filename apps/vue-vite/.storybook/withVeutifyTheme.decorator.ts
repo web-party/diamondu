@@ -1,7 +1,8 @@
 import { h } from 'vue';
 import StoryWrapper from './StoryWrapper.vue';
+import type { Decorator } from '@storybook/vue3';
 
-export const withVuetifyTheme = (storyFn, context) => {
+export const withVuetifyTheme: Decorator = (storyFn, context) => {
     const story = storyFn();
 
     return () => {
