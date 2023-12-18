@@ -73,13 +73,7 @@
             }
         },
         "lint": {
-            "executor": "@nx/eslint:lint",
-            "options": {
-                "lintFilePatterns": [
-                    "apps/kitchen-sink/**/*.ts",
-                    "apps/kitchen-sink/**/*.html"
-                ]
-            }
+            "executor": "@nx/eslint:lint"
         },
         "test": {
             "executor": "@nx/jest:jest",

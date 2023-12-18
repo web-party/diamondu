@@ -4,14 +4,22 @@ import vue from '@vitejs/plugin-vue';
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 
 export default defineConfig({
+    root: __dirname,
+    build: {
+        outDir: '../../dist/apps/vue-vite',
+        reportCompressedSize: true,
+        commonjsOptions: {
+            transformMixedEsModules: true,
+        },
+    },
     cacheDir: '../../node_modules/.vite/vue-vite',
 
     server: {
         port: 4200,
         host: 'localhost',
         fs: {
-            allow: ['../..']
-        }
+            allow: ['../..'],
+        },
     },
 
     preview: {
@@ -27,6 +35,11 @@ export default defineConfig({
     // },
 
     test: {
+        reporters: ['default'],
+        coverage: {
+            reportsDirectory: '../../coverage/apps/vue-vite',
+            provider: 'v8',
+        },
         globals: true,
         cache: {
             dir: '../../node_modules/.vitest',
