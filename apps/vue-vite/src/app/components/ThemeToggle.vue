@@ -1,5 +1,5 @@
 <template>
-    <v-btn @click="toggleColorMode()" icon="mdi-theme-light-dark" aria-label="Toggle color mode" />
+    <v-btn @click="toggleColorMode()" icon="mdi-theme-light-dark" color="purple" aria-label="Toggle color mode" />
 </template>
 
 <script setup>

@@ -6,7 +6,7 @@
                 <dt class="tw-inline-block tw-italic">IBAN:</dt>
                 <dd class="tw-inline-block">
                     {{ iban }}
-                    <v-btn @click="copy(iban)" variant="plain" :icon="iconId" size="small" :disabled="copied" />
+                    <v-btn @click="copy(iban)" variant="plain" :icon="iconId" size="small" :disabled="copied" color="purple" />
                 </dd>
             </div>
         </dl>
