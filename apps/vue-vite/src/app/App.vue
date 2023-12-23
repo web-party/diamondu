@@ -8,8 +8,8 @@
             <ThemeToggle />
         </section>
         <section class="lg:tw-col-span-2 tw-space-y-4">
-            <CollectionLayoutSwitch />
-            <ProductCollection />
+            <CollectionLayoutSwitch @switch-layout="switchLayout" />
+            <ProductCollection :layout="layout" />
         </section>
     </main>
 </template>
@@ -18,8 +18,15 @@
 import BankAccountDetails from './components/BankAccountDetails.vue';
 import AvatarStack from './components/AvatarStack.vue';
 import Countdown from './components/Countdown.vue';
-import CollectionLayoutSwitch from './components/CollectionLayoutSwitch.vue';
+import CollectionLayoutSwitch, { CollectionLayout } from './components/CollectionLayoutSwitch.vue';
 import ProductCollection from './components/ProductCollection.vue';
 import SocialLinks from './components/SocialLinks.vue';
 import ThemeToggle from './components/ThemeToggle.vue';
+import { ref } from 'vue';
+
+let layout = ref(CollectionLayout.grid);
+
+function switchLayout(val: CollectionLayout) {
+    layout.value = val;
+}
 </script>

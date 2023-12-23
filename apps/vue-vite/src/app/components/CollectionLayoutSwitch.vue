@@ -5,12 +5,15 @@
     </v-btn-toggle>
 </template>
 
-<script lang="ts" setup>
-    import { ref, watch } from 'vue';
+<script lang="ts">
+    export enum CollectionLayout { grid, list }
+</script>
 
-    enum CollectionLayout { grid, list }
+<script lang="ts" setup>
+    import { ref, watchEffect } from 'vue';
+
     const emit = defineEmits<{ (event: 'switchLayout', val: CollectionLayout): void }>();
 
     const layout = ref<CollectionLayout>(CollectionLayout.grid);
-    watch(layout, newVal => { emit('switchLayout', newVal); });
+    watchEffect(() => { emit('switchLayout', layout.value); });
 </script>

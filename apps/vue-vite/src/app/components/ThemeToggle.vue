@@ -2,15 +2,15 @@
     <v-btn @click="toggleColorMode()" icon="mdi-theme-light-dark" color="purple" aria-label="Toggle color mode" />
 </template>
 
-<script setup>
+<script setup lang="ts">
     import { useTheme as useVuetifyTheme } from 'vuetify';
     import { useDark, useToggle } from '@vueuse/core';
-    import { watch } from 'vue';
+    import { watchEffect } from 'vue';
 
     const isDark = useDark({ valueDark: 'tw-dark' }),
-        toggleColorMode = useToggle(isDark),
-        vuetifyTheme = useVuetifyTheme(),
-        { name: vuetifyThemeName } = vuetifyTheme.global;
+            toggleColorMode = useToggle(isDark),
+            vuetifyTheme = useVuetifyTheme(),
+            { name: vuetifyThemeName } = vuetifyTheme.global;
 
-    watch(isDark, isDark => { vuetifyThemeName.value = isDark ? 'dark' : 'light' }, { immediate: true });
+    watchEffect(() => { vuetifyThemeName.value = isDark.value ? 'dark' : 'light' });
 </script>
