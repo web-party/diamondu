@@ -14,7 +14,7 @@
             </div>
         </dl>
         <v-slide-y-transition>
-            <v-textarea v-if="text || copied" clearable label="Paste your clipboard contents here" rows="2" />
+            <v-textarea v-if="text" clearable label="Paste your clipboard contents here" rows="2" />
         </v-slide-y-transition>
     </section>
 </template>
