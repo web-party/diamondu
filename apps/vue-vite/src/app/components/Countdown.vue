@@ -8,7 +8,7 @@
     import { format, parse, subSeconds } from 'date-fns';
     import { ref } from 'vue';
 
-    const props = defineProps({ startAt: { type: String, default: '00:10' }});
+    const props = withDefaults(defineProps<{ startAt?: string }>(), { startAt: '00:10' });
 
     const displayedRemainingTime = ref(props.startAt);
     const finished = ref(false);
