@@ -10,10 +10,8 @@
 </script>
 
 <script lang="ts" setup>
-    import { ref, watchEffect } from 'vue';
+    import { ref } from 'vue';
 
-    const emit = defineEmits<{ (event: 'switchLayout', val: CollectionLayout): void }>();
-
-    const layout = ref<CollectionLayout>(CollectionLayout.grid);
-    watchEffect(() => { emit('switchLayout', layout.value); });
+    const layout = ref(CollectionLayout.grid);
+    defineExpose({ layout });
 </script>
