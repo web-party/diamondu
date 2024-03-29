@@ -5,7 +5,9 @@
         {
             "files": ["*.ts", "*.tsx", "*.js", "*.jsx", "*.vue"],
             "rules": {
-                "vue/multi-word-component-names": "off"
+                "vue/multi-word-component-names": "off",
+                "vue/html-indent": ["warn", 4],
+                "vue/max-attributes-per-line": "off"
             }
         }
     ]
