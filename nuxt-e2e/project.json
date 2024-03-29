@@ -1,7 +1,0 @@
-{
-    "name": "nuxt-e2e",
-    "$schema": "../node_modules/nx/schemas/project-schema.json",
-    "sourceRoot": "nuxt-e2e/src",
-    "targets": {},
-    "implicitDependencies": ["nuxt"]
-}
