@@ -1,8 +1,5 @@
 {
     "$schema": "./node_modules/nx/schemas/nx-schema.json",
-    "affected": {
-        "defaultBase": "main"
-    },
     "cli": {
         "packageManager": "npm"
     },
@@ -116,5 +113,6 @@
                 "targetName": "e2e"
             }
         }
-    ]
+    ],
+    "defaultBase": "main"
 }
