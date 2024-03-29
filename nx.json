@@ -112,6 +112,23 @@
             "options": {
                 "targetName": "e2e"
             }
+        },
+        {
+            "plugin": "@nx/cypress/plugin",
+            "options": {
+                "ciTargetName": "e2e-ci",
+                "targetName": "e2e",
+                "componentTestingTargetName": "component-test"
+            }
+        },
+        {
+            "plugin": "@nx/storybook/plugin",
+            "options": {
+                "buildStorybookTargetName": "build-storybook",
+                "serveStorybookTargetName": "storybook",
+                "testStorybookTargetName": "test-storybook",
+                "staticStorybookTargetName": "static-storybook"
+            }
         }
     ],
     "defaultBase": "main"
