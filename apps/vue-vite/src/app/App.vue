@@ -24,5 +24,5 @@
     import ThemeToggle from './components/ThemeToggle.vue';
     import { ref } from 'vue';
 
-    const layoutRef = ref<typeof CollectionLayoutSwitch|null>();
+    const layoutRef = ref<InstanceType<typeof CollectionLayoutSwitch>|null>();
 </script>
