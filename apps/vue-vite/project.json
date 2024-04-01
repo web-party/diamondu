@@ -67,32 +67,6 @@
                 "buildTarget": "vue-vite:build"
             }
         },
-        "storybook": {
-            "executor": "@nx/storybook:storybook",
-            "options": {
-                "port": 4400,
-                "configDir": "apps/vue-vite/.storybook",
-                "open": true
-            },
-            "configurations": {
-                "ci": {
-                    "quiet": true
-                }
-            }
-        },
-        "build-storybook": {
-            "executor": "@nx/storybook:build",
-            "outputs": ["{options.outputDir}"],
-            "options": {
-                "outputDir": "dist/storybook/vue-vite",
-                "configDir": "apps/vue-vite/.storybook"
-            },
-            "configurations": {
-                "ci": {
-                    "quiet": true
-                }
-            }
-        },
         "test-storybook": {
             "executor": "nx:run-commands",
             "options": {
