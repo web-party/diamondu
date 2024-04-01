@@ -66,12 +66,6 @@
             },
             "defaultConfiguration": "development"
         },
-        "extract-i18n": {
-            "executor": "@angular-devkit/build-angular:extract-i18n",
-            "options": {
-                "buildTarget": "kitchen-sink:build"
-            }
-        },
         "test": {
             "executor": "@nx/jest:jest",
             "outputs": ["{workspaceRoot}/coverage/apps/kitchen-sink"],
@@ -80,32 +74,13 @@
             }
         },
         "storybook": {
-            "executor": "@storybook/angular:start-storybook",
             "options": {
-                "port": 4400,
-                "configDir": "apps/kitchen-sink/.storybook",
-                "browserTarget": "kitchen-sink:build",
-                "compodoc": false
-            },
-            "configurations": {
-                "ci": {
-                    "quiet": true
-                }
+                "browserTarget": "kitchen-sink:build:development"
             }
         },
         "build-storybook": {
-            "executor": "@storybook/angular:build-storybook",
-            "outputs": ["{options.outputDir}"],
             "options": {
-                "outputDir": "dist/storybook/kitchen-sink",
-                "configDir": "apps/kitchen-sink/.storybook",
-                "browserTarget": "kitchen-sink:build",
-                "compodoc": false
-            },
-            "configurations": {
-                "ci": {
-                    "quiet": true
-                }
+                "browserTarget": "kitchen-sink:build:production"
             }
         }
     },
