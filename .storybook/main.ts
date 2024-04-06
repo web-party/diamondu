@@ -7,6 +7,6 @@ export const rootMain: StorybookConfig = {
         options: { enableIvy: false }
     },
     docs: {
-        autodocs: true
+        autodocs: false
     }
 };
