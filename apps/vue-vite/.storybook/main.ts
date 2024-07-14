@@ -7,7 +7,7 @@ const config: StorybookConfig = {
         name: '@storybook/vue3-vite',
         options: {
             builder: {
-                viteConfigPath: 'vite.config.ts',
+                viteConfigPath: 'vite.config.mts',
             },
         },
     },

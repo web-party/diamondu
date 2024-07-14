@@ -4,7 +4,6 @@ import vue from '@vitejs/plugin-vue';
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 
 export default defineConfig({
-    root: __dirname,
     build: {
         outDir: '../../dist/apps/vue-vite',
         reportCompressedSize: true,
@@ -41,10 +40,12 @@ export default defineConfig({
             provider: 'v8',
         },
         globals: true,
-        cache: {
-            dir: '../../node_modules/.vitest',
-        },
         environment: 'jsdom',
         include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
+        server: {
+            deps: {
+                inline: ['vuetify'],
+            },
+        },
     },
 });
