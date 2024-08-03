@@ -25,4 +25,6 @@ export default defineNuxtConfig({
     vite: {
         plugins: [nxViteTsPaths()],
     },
+
+    compatibilityDate: '2024-08-03'
 });
