@@ -10,3 +10,5 @@ export const rootMain: StorybookConfig = {
         autodocs: false
     }
 };
+
+export default rootMain;
