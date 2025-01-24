@@ -59,6 +59,9 @@
         "@nx/eslint:lint": {
             "inputs": ["default", "{workspaceRoot}/.eslintrc.json"],
             "cache": true
+        },
+        "e2e-ci--**/*": {
+            "dependsOn": ["^build"]
         }
     },
     "namedInputs": {

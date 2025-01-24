@@ -6,9 +6,7 @@ export const rootMain: StorybookConfig = {
         name: '@storybook/angular',
         options: { enableIvy: false }
     },
-    docs: {
-        autodocs: false
-    }
+    addons: ['@chromatic-com/storybook']
 };
 
 export default rootMain;
