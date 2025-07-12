@@ -10,7 +10,10 @@ npx storybook@latest upgrade
 
 ## The Storybook automigration scripts were ran
 
-The following commands ran successfully and your Storybook configuration was successfully migrated to the latest version 7:
+### Some migrations failed
+
+The following commands failed and your Storybook configuration for these projects was not
+migrated to the latest version 7:
 
 -   `npx storybook@latest automigrate --config-dir .storybook`
 
@@ -18,7 +21,8 @@ The following commands ran successfully and your Storybook configuration was suc
 
 -   `npx storybook@latest automigrate --config-dir apps/vue-vite/.storybook`
 
-Please make sure to check the results yourself and make sure that everything is working as expected.
+You can run these commands again, manually, and follow the instructions in the
+output of these commands to migrate your Storybook configuration to the latest version 8.
 
 Also, we may have missed something. Please make sure to check the logs of the Storybook CLI commands that were run, and look for
 the `❌ Failed trying to evaluate` message or `❌ The migration failed to update` message. This will indicate if a command was
