@@ -48,3 +48,4 @@ Thumbs.db
 .nuxt
 .nitro
 .cache
+vite.config.*.timestamp*
