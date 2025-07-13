@@ -49,3 +49,4 @@ Thumbs.db
 .nitro
 .cache
 vite.config.*.timestamp*
+vitest.config.*.timestamp*
