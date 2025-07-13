@@ -5,7 +5,8 @@ import { FormBuilder, Validators } from '@angular/forms';
     selector: 'sch-address-form',
     templateUrl: './address-form.component.html',
     styleUrls: ['./address-form.component.css'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class AddressFormComponent {
     addressForm = this.fb.group({

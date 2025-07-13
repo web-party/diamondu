@@ -8,7 +8,6 @@ type BarChartData = ChartConfiguration<'bar'>['data'];
 @Component({
     selector: 'd-compare-gh-users-stars',
     templateUrl: './compare-gh-users-stars.component.html',
-    standalone: true,
     imports: [NgChartsModule]
 })
 export class CompareGhUsersStarsComponent {

@@ -7,7 +7,8 @@ import { map, shareReplay } from 'rxjs/operators';
     selector: 'sch-global-nav',
     templateUrl: './global-nav.component.html',
     styleUrls: ['./global-nav.component.css'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class GlobalNavComponent {
     isHandset$: Observable<boolean> = inject(BreakpointObserver).observe(Breakpoints.Handset)

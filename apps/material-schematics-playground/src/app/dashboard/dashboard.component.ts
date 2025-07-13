@@ -13,6 +13,7 @@ type Card = {
     selector: 'sch-dashboard',
     templateUrl: './dashboard.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class DashboardComponent {
     @HostBinding('class') classes = 'tw-block tw-p-5';

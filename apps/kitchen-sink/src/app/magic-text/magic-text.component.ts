@@ -16,7 +16,6 @@ import { AsyncPipe } from '@angular/common';
             ])
         ])
     ],
-    standalone: true,
     imports: [AsyncPipe]
 })
 export class MagicTextComponent implements OnInit {
