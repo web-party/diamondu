@@ -8,7 +8,7 @@ const config: StorybookConfig = {
     core: { ...rootMain.core, builder: '@storybook/builder-webpack5' },
 
     stories: ['../src/app/**/*.stories.ts'],
-    addons: ['@storybook/addon-essentials', ...(rootMain.addons || [])],
+    addons: [...(rootMain.addons || []), '@storybook/addon-docs'],
 };
 
 export default config;

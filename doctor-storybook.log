@@ -1,0 +1,30 @@
+🩺 The doctor is checking the health of your Storybook..
+╭ Incompatible packages found ─────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                                              │
+│   You are currently using Storybook 9.0.9 but you have packages which are incompatible with it:              │
+│   - @chromatic-com/storybook@3.2.4 which depends on ^8.2.0 || ^8.3.0-0 || ^8.4.0-0 || ^8.5.0-0 || ^8.6.0-0   │
+│   - @storybook/addon-docs@9.0.16 which depends on 9.0.16                                                     │
+│    Repo: https://github.com/storybookjs/storybook/tree/next/code/addons/docs                                 │
+│   - @storybook/core-server@8.6.14 which depends on ^8.2.0 || ^8.3.0-0 || ^8.4.0-0 || ^8.5.0-0 || ^8.6.0-0    │
+│    Repo: https://github.com/storybookjs/storybook/tree/next/code/lib/core-server                             │
+│   - @storybook/test@8.6.14 which depends on 8.6.14                                                           │
+│    Repo: https://github.com/storybookjs/storybook/tree/next/code/lib/test                                    │
+│                                                                                                              │
+│                                                                                                              │
+│   Please consider updating your packages or contacting the maintainers for compatibility details.            │
+│   For more on Storybook 9 compatibility, see the linked GitHub issue:                                        │
+│   https://github.com/storybookjs/storybook/issues/30944                                                      │
+│                                                                                                              │
+│                                                                                                              │
+│   The version of storybook@9.0.9 is behind the following core packages:                                      │
+│   - @storybook/addon-docs@9.0.16                                                                             │
+│   Upgrade Storybook with:                                                                                    │
+│   npx storybook@latest upgrade                                                                               │
+│                                                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+You can always recheck the health of your project by running:
+npx storybook doctor
+
+Full logs are available in /Users/deimantas/software-development/diamondu/doctor-storybook.log
+
