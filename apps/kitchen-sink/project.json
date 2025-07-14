@@ -4,6 +4,7 @@
     "projectType": "application",
     "sourceRoot": "apps/kitchen-sink/src",
     "prefix": "d",
+    "tags": [],
     "targets": {
         "build": {
             "executor": "@nx/angular:browser-esbuild",
@@ -64,7 +65,8 @@
                     "buildTarget": "kitchen-sink:build:development"
                 }
             },
-            "defaultConfiguration": "development"
+            "defaultConfiguration": "development",
+            "continuous": true
         },
         "test": {
             "executor": "@nx/jest:jest",
@@ -83,6 +85,5 @@
                 "browserTarget": "kitchen-sink:build:production"
             }
         }
-    },
-    "tags": []
+    }
 }

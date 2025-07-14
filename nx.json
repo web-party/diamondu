@@ -133,6 +133,5 @@
         }
     ],
     "defaultBase": "main",
-    "neverConnectToCloud": true,
-    "useLegacyCache": true
+    "neverConnectToCloud": true
 }

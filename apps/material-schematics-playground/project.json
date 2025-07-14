@@ -4,6 +4,7 @@
     "projectType": "application",
     "sourceRoot": "apps/material-schematics-playground/src",
     "prefix": "sch",
+    "tags": [],
     "targets": {
         "build": {
             "executor": "@angular-devkit/build-angular:browser",
@@ -68,7 +69,8 @@
                     "buildTarget": "material-schematics-playground:build:development"
                 }
             },
-            "defaultConfiguration": "development"
+            "defaultConfiguration": "development",
+            "continuous": true
         },
         "extract-i18n": {
             "executor": "@angular-devkit/build-angular:extract-i18n",
@@ -86,6 +88,5 @@
                 "jestConfig": "apps/material-schematics-playground/jest.config.ts"
             }
         }
-    },
-    "tags": []
+    }
 }
