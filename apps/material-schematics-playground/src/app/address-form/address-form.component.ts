@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
@@ -9,6 +9,8 @@ import { FormBuilder, Validators } from '@angular/forms';
     standalone: false
 })
 export class AddressFormComponent {
+    private readonly fb = inject(FormBuilder);
+
     addressForm = this.fb.group({
         company: null,
         firstName: [null, Validators.required],
@@ -86,8 +88,6 @@ export class AddressFormComponent {
         { name: 'Wisconsin', abbreviation: 'WI' },
         { name: 'Wyoming', abbreviation: 'WY' }
     ];
-
-    constructor(private fb: FormBuilder) {}
 
     onSubmit(): void {
         alert('Thanks!');

@@ -13,7 +13,7 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <mat-form-field class="full-width">
+                    <mat-form-field class="tw-w-full">
                         <input matInput placeholder="First name" formControlName="firstName">
                         @if (addressForm.controls['firstName'].hasError('required')) {
                             <mat-error>First name is <strong>required</strong></mat-error>
@@ -21,7 +21,7 @@
                     </mat-form-field>
                 </div>
                 <div class="col">
-                    <mat-form-field class="full-width">
+                    <mat-form-field class="tw-w-full">
                         <input matInput placeholder="Last name" formControlName="lastName">
                         @if (addressForm.controls['lastName'].hasError('required')) {
                             <mat-error>Last name is <strong>required</strong></mat-error>
@@ -31,7 +31,7 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <mat-form-field class="full-width">
+                    <mat-form-field class="tw-w-full">
                         <textarea matInput placeholder="Address" formControlName="address"></textarea>
                         @if (addressForm.controls['address'].hasError('required')) {
                             <mat-error>Address is <strong>required</strong></mat-error>
@@ -39,24 +39,19 @@
                     </mat-form-field>
                 </div>
             </div>
-            @if (!hasUnitNumber) {
                 <div class="row">
                     <div class="col">
+                    @if (!hasUnitNumber) {
                         <button mat-button type="button" (click)="hasUnitNumber = !hasUnitNumber">
                             + Add C/O, Apt, Suite, Unit
                         </button>
-                    </div>
-                </div>
-            }
-            @if (hasUnitNumber) {
-                <div class="row">
-                    <div class="col">
-                        <mat-form-field class="full-width">
+                    } @else {
+                        <mat-form-field class="tw-w-full">
                             <textarea matInput placeholder="Address 2" formControlName="address2"></textarea>
                         </mat-form-field>
+                    }
                     </div>
                 </div>
-            }
             <div class="row">
                 <div class="col">
                     <mat-form-field class="full-width">
