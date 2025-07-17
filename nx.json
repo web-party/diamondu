@@ -109,7 +109,11 @@
             }
         },
         "@nx/eslint:lint": {
-            "inputs": ["default", "{workspaceRoot}/.eslintrc.json"],
+            "inputs": [
+                "default",
+                "{workspaceRoot}/.eslintrc.json",
+                "{workspaceRoot}/eslint.config.mjs"
+            ],
             "cache": true
         },
         "e2e-ci--**/*": {
@@ -126,7 +130,8 @@
             "!{projectRoot}/src/test-setup.[jt]s",
             "!{projectRoot}/**/*.stories.@(js|jsx|ts|tsx|mdx)",
             "!{projectRoot}/.storybook/**/*",
-            "!{projectRoot}/tsconfig.storybook.json"
+            "!{projectRoot}/tsconfig.storybook.json",
+            "!{projectRoot}/eslint.config.mjs"
         ]
     },
     "nxCloudAccessToken": "NDAwMGVhY2MtYWJhZC00NGQ0LWIyZDQtY2FjYjIyYzU4OWQyfHJlYWQtd3JpdGU=",
