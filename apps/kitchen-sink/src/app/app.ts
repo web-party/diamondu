@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CompareGhUsersStarsComponent } from './compare-gh-users-stars/compare-gh-users-stars';
-import { MagicTextComponent } from './magic-text/magic-text.component';
+import { MagicTextComponent } from './magic-text/magic-text';
 import { HamburgerIngredientsComponent } from './hamburger-ingredients/hamburger-ingredients.component';
 
 @Component({

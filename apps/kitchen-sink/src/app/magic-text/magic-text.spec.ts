@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { MagicTextComponent } from './magic-text.component';
+import { MagicTextComponent } from './magic-text';
 
 describe('MagicTextComponent', () => {
     let component: MagicTextComponent;

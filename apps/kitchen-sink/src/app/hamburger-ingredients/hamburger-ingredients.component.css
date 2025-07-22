@@ -1,7 +1,0 @@
-:host {
-    @apply w-full h-full flex flex-col items-center bg-[#111];
-}
-
-section {
-    @apply w-full h-screen flex items-center justify-center text-[#aaa];
-}

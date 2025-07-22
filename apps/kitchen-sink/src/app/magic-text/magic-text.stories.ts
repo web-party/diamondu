@@ -1,6 +1,6 @@
 import { applicationConfig, type Meta, type StoryObj } from '@storybook/angular';
 import { provideAnimations } from '@angular/platform-browser/animations';
-import { MagicTextComponent } from './magic-text.component';
+import { MagicTextComponent } from './magic-text';
 
 const meta: Meta<MagicTextComponent> = {
     title: 'Magic text',
