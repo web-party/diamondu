@@ -7,7 +7,7 @@
     "tags": [],
     "targets": {
         "build": {
-            "executor": "@angular-devkit/build-angular:browser",
+            "executor": "@nx/angular:browser-esbuild",
             "outputs": ["{options.outputPath}"],
             "options": {
                 "outputPath": "dist/apps/material-schematics-playground",
@@ -60,7 +60,7 @@
             "defaultConfiguration": "production"
         },
         "serve": {
-            "executor": "@angular-devkit/build-angular:dev-server",
+            "executor": "@nx/angular:dev-server",
             "configurations": {
                 "production": {
                     "buildTarget": "material-schematics-playground:build:production"
