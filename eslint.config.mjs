@@ -1,20 +1,10 @@
-import { FlatCompat } from '@eslint/eslintrc';
-import { dirname } from 'path';
-import { fileURLToPath } from 'url';
-import js from '@eslint/js';
-import nxEslintPlugin from '@nx/eslint-plugin';
-
-const compat = new FlatCompat({
-    baseDirectory: dirname(fileURLToPath(import.meta.url)),
-    recommendedConfig: js.configs.recommended,
-});
+import nx from '@nx/eslint-plugin';
 
 export default [
-    {
-        ignores: ['**/dist'],
-    },
-    ...compat.extends('plugin:storybook/recommended'),
-    { plugins: { '@nx': nxEslintPlugin } },
+    { ignores: ['**/dist'] },
+    ...nx.configs['flat/base'],
+    ...nx.configs['flat/javascript'],
+    ...nx.configs['flat/typescript'],
     {
         files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx', '**/*.vue'],
         rules: {
@@ -33,30 +23,12 @@ export default [
             ],
         },
     },
-    ...compat
-        .config({
-            extends: ['plugin:@nx/typescript'],
-        })
-        .map((config) => ({
-            ...config,
-            files: ['**/*.ts', '**/*.tsx', '**/*.cts', '**/*.mts'],
-            rules: {
-                ...config.rules,
-                '@typescript-eslint/no-extra-semi': 'error',
-                'no-extra-semi': 'off',
-            },
-        })),
-    ...compat
-        .config({
-            extends: ['plugin:@nx/javascript'],
-        })
-        .map((config) => ({
-            ...config,
-            files: ['**/*.js', '**/*.jsx', '**/*.cjs', '**/*.mjs'],
-            rules: {
-                ...config.rules,
-                '@typescript-eslint/no-extra-semi': 'error',
-                'no-extra-semi': 'off',
-            },
-        })),
+    {
+        files: ['**/*.ts', '**/*.tsx', '**/*.cts', '**/*.mts'],
+        rules: {},
+    },
+    {
+        files: ['**/*.js', '**/*.jsx', '**/*.cjs', '**/*.mjs'],
+        rules: {},
+    },
 ];
