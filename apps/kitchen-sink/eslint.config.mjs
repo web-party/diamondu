@@ -10,7 +10,6 @@ export default [
     {
         files: ['**/*.ts'],
         rules: {
-            indent: ['error', 4],
             '@angular-eslint/directive-selector': [
                 'error',
                 {
@@ -27,6 +26,16 @@ export default [
                     style: 'kebab-case',
                 },
             ],
+            '@angular-eslint/prefer-signals': 'warn',
+            '@angular-eslint/prefer-on-push-component-change-detection': 'warn',
+        }
+    },
+    {
+        files: ['**/*.html'],
+        rules: {
+            '@angular-eslint/template/prefer-control-flow': 'warn',
+            '@angular-eslint/template/prefer-at-empty': 'warn',
+            '@angular-eslint/template/prefer-self-closing-tags': 'warn',
         }
     },
     {

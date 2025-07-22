@@ -35,6 +35,7 @@ import { MatMenuModule } from '@angular/material/menu';
         BrowserAnimationsModule,
         RouterModule.forRoot(appRoutes, {
             initialNavigation: 'enabledBlocking',
+            enableViewTransitions: true
         }),
         LayoutModule,
         MatToolbarModule,

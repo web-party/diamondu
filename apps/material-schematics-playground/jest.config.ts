@@ -1,4 +1,4 @@
-/* eslint-disable */
+ 
 export default {
     displayName: 'material-schematics-playground',
     preset: '../../jest.preset.js',

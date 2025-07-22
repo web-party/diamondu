@@ -26,5 +26,5 @@ export class MagicTextComponent {
         scan<string, string[]>((acc, curr) => [...acc, curr], []),
         repeat(3)
     );
-    protected characters = toSignal(this.characters$);
+    protected readonly characters = toSignal(this.characters$);
 }

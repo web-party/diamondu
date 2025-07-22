@@ -1,8 +1,8 @@
 <mat-sidenav-container class="tw-h-full">
     <mat-sidenav #drawer class="tw-w-[25ch]" fixedInViewport
-                 [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-                 [mode]="(isHandset$ | async) ? 'over' : 'side'"
-                 [opened]="(isHandset$ | async) === false">
+                 [attr.role]="isNarrowViewport() ? 'dialog' : 'navigation'"
+                 [mode]="isNarrowViewport() ? 'over' : 'side'"
+                 [opened]="!isNarrowViewport()">
         <mat-toolbar class="!tw-bg-inherit">Menu</mat-toolbar>
         <mat-nav-list>
             <a mat-list-item routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
@@ -18,7 +18,7 @@
     </mat-sidenav>
     <mat-sidenav-content>
         <mat-toolbar color="primary" class="tw-sticky tw-top-0 tw-z-10 !tw-backdrop-blur-sm !tw-bg-[#795548]/50">
-            @if (isHandset$ | async) {
+            @if (isNarrowViewport()) {
                 <button
                     type="button"
                     aria-label="Toggle sidenav"

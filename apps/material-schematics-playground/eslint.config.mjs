@@ -8,7 +8,6 @@ export default [
     {
         files: ['**/*.ts'],
         rules: {
-            indent: ['error', 4],
             '@angular-eslint/prefer-standalone': 'off',
             '@angular-eslint/directive-selector': [
                 'error',

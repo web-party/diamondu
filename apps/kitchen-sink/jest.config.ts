@@ -1,4 +1,3 @@
-/* eslint-disable */
 export default {
     displayName: 'kitchen-sink',
     preset: '../../jest.preset.js',

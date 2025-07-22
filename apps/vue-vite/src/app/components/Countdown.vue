@@ -23,7 +23,7 @@
         }, 1000);
     });
 
-    onUnmounted(() => { !finished.value && clearInterval(intervalId); })
+    onUnmounted(() => { !finished.value && clearInterval(intervalId); });
 
     watch(finished, newVal => { newVal && clearInterval(intervalId); });
 </script>

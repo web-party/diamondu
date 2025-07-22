@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
+import { toSignal } from '@angular/core/rxjs-interop';
 
 @Component({
     selector: 'sch-global-nav',
@@ -11,9 +11,11 @@ import { map, shareReplay } from 'rxjs/operators';
     standalone: false
 })
 export class GlobalNavComponent {
-    isHandset$: Observable<boolean> = inject(BreakpointObserver).observe(Breakpoints.Handset)
+    private readonly isHandset$ = inject(BreakpointObserver)
+        .observe(Breakpoints.Handset)
         .pipe(
             map(result => result.matches),
             shareReplay()
         );
+    protected isNarrowViewport = toSignal(this.isHandset$);
 }
