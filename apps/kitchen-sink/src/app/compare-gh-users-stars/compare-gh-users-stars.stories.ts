@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/angular';
-import { CompareGhUsersStarsComponent } from './compare-gh-users-stars.component';
+import { CompareGhUsersStarsComponent } from './compare-gh-users-stars';
 
 const meta: Meta<CompareGhUsersStarsComponent> = {
     title: 'compare GH users stars',
