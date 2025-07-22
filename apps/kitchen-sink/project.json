@@ -56,7 +56,7 @@
             "defaultConfiguration": "production"
         },
         "serve": {
-            "executor": "@angular-devkit/build-angular:dev-server",
+            "executor": "@nx/angular:dev-server",
             "configurations": {
                 "production": {
                     "buildTarget": "kitchen-sink:build:production"
@@ -76,13 +76,20 @@
             }
         },
         "storybook": {
+            "executor": "@storybook/angular:start-storybook",
             "options": {
-                "browserTarget": "kitchen-sink:build:development"
+                "configDir": "apps/kitchen-sink/.storybook",
+                "compodoc": false,
+                "browserTarget": "kitchen-sink:build",
+                "styles": ["apps/kitchen-sink/src/styles.css"]
             }
         },
         "build-storybook": {
+            "executor": "@storybook/angular:build-storybook",
             "options": {
-                "browserTarget": "kitchen-sink:build:production"
+                "configDir": "apps/kitchen-sink/.storybook",
+                "compodoc": false,
+                "browserTarget": "kitchen-sink:build"
             }
         }
     }
