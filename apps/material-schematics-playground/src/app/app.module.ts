@@ -24,13 +24,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        GlobalNavComponent,
-        AddressFormComponent,
-        SettingsComponent,
-        DashboardComponent,
-    ],
+    declarations: [AppComponent],
     imports: [
         BrowserAnimationsModule,
         RouterModule.forRoot(appRoutes, {
@@ -50,9 +44,14 @@ import { MatMenuModule } from '@angular/material/menu';
         ReactiveFormsModule,
         MatGridListModule,
         MatMenuModule,
+        GlobalNavComponent,
+        AddressFormComponent,
+        SettingsComponent,
+        DashboardComponent,
     ],
     providers: [
-        { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'outline' } }],
+        { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'outline' } }
+    ],
     bootstrap: [AppComponent],
 })
 export class AppModule {}

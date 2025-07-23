@@ -1,12 +1,17 @@
 import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
+import { MatCard, MatCardHeader, MatCardTitle, MatCardContent, MatCardActions } from '@angular/material/card';
+import { MatFormField, MatInput, MatError, MatHint } from '@angular/material/input';
+import { MatButton } from '@angular/material/button';
+import { MatSelect, MatOption } from '@angular/material/select';
+import { MatRadioGroup, MatRadioButton } from '@angular/material/radio';
 
 @Component({
     selector: 'sch-address-form',
     templateUrl: './address-form.component.html',
     styleUrls: ['./address-form.component.css'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+    imports: [ReactiveFormsModule, MatCard, MatCardHeader, MatCardTitle, MatCardContent, MatFormField, MatInput, MatError, MatButton, MatSelect, MatOption, MatHint, MatRadioGroup, MatRadioButton, MatCardActions]
 })
 export class AddressFormComponent {
     private readonly fb = inject(FormBuilder);

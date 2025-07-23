@@ -1,6 +1,12 @@
 import { Component, ChangeDetectionStrategy, inject, HostBinding } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
+import { MatGridList, MatGridTile } from '@angular/material/grid-list';
+import { MatCard, MatCardHeader, MatCardTitle, MatCardContent } from '@angular/material/card';
+import { MatIconButton } from '@angular/material/button';
+import { MatMenuTrigger, MatMenu, MatMenuItem } from '@angular/material/menu';
+import { MatIcon } from '@angular/material/icon';
+import { AsyncPipe } from '@angular/common';
 
 type Card = {
     title: string,
@@ -13,7 +19,7 @@ type Card = {
     selector: 'sch-dashboard',
     templateUrl: './dashboard.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+    imports: [MatGridList, MatGridTile, MatCard, MatCardHeader, MatCardTitle, MatIconButton, MatMenuTrigger, MatIcon, MatMenu, MatMenuItem, MatCardContent, AsyncPipe]
 })
 export class DashboardComponent {
     @HostBinding('class') classes = 'tw-block tw-p-5';
