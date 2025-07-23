@@ -1,4 +1,4 @@
 .active::before {
-    background-color: var(--mat-list-list-item-focus-state-layer-color);
-    opacity: var(--mat-list-list-item-focus-state-layer-opacity);
+    background-color: var(--mat-list-list-item-hover-state-layer-color, var(--mat-sys-on-surface));
+    opacity: var(--mat-list-list-item-hover-state-layer-opacity, var(--mat-sys-hover-state-layer-opacity));
 }
