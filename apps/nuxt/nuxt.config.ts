@@ -5,7 +5,6 @@ import { defineNuxtConfig } from 'nuxt/config';
 export default defineNuxtConfig({
     workspaceDir: '../../',
     srcDir: 'src',
-    devtools: { enabled: true },
     devServer: {
         host: 'localhost',
         port: 4200,
