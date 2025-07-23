@@ -24,7 +24,7 @@
     import { useClipboard } from '@vueuse/core';
     import { computed, ref } from 'vue';
 
-    const iban = faker.finance.iban(true, 'DE'),
+    const iban = faker.finance.iban({ formatted: true, countryCode: 'DE' }),
         { copy, copied, text } = useClipboard({ copiedDuring: 2000 }),
         iconId = computed(() => `mdi-${copied.value ? 'check' : 'content-copy'}`),
         tooltipActive = ref(false);

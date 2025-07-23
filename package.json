@@ -23,7 +23,7 @@
         "@angular/platform-browser": "20.0.7",
         "@angular/platform-browser-dynamic": "20.0.7",
         "@angular/router": "20.0.7",
-        "@faker-js/faker": "^8.0.2",
+        "@faker-js/faker": "^9.9",
         "@headlessui/vue": "^1.7.23",
         "@nx/angular": "21.2.3",
         "@nx/nuxt": "21.2.3",
