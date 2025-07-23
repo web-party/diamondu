@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import type { ChartConfiguration } from 'chart.js';
 import { BaseChartDirective, provideCharts, withDefaultRegisterables } from 'ng2-charts';
 
@@ -9,9 +9,10 @@ type BarChartData = ChartConfiguration<'bar'>['data'];
     selector: 'd-compare-gh-users-stars',
     templateUrl: './compare-gh-users-stars.html',
     imports: [BaseChartDirective],
-    providers: [provideCharts(withDefaultRegisterables())]
+    providers: [provideCharts(withDefaultRegisterables())],
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CompareGhUsersStarsComponent {
+export class CompareGhUsersStars {
     chartOptions: BarChartOptions = { responsive: false };
     chartData: BarChartData = {
         labels: ['user1', 'user2', 'user3'],

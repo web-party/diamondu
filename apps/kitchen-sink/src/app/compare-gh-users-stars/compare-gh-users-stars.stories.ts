@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/angular';
-import { CompareGhUsersStarsComponent } from './compare-gh-users-stars';
+import { CompareGhUsersStars } from './compare-gh-users-stars';
 
-const meta: Meta<CompareGhUsersStarsComponent> = {
+const meta: Meta<CompareGhUsersStars> = {
     title: 'compare GH users stars',
-    component: CompareGhUsersStarsComponent,
+    component: CompareGhUsersStars,
 };
 
 export default meta;
-type Story =  StoryObj<CompareGhUsersStarsComponent>;
+type Story =  StoryObj<CompareGhUsersStars>;
 
 export const Primary: Story = {};

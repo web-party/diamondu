@@ -21,7 +21,7 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
     changeDetection: ChangeDetectionStrategy.OnPush,
     host: { class: 'w-full h-full flex flex-col items-center bg-[#111]' }
 })
-export class HamburgerIngredientsComponent implements AfterViewInit {
+export class HamburgerIngredients implements AfterViewInit {
     @ViewChild('hero') private hero!: ElementRef<SVGElement>;
     // images = viewChildren();
     // @ViewChildren(SVGImageElement) images!: QueryList<ElementRef<SVGImageElement>>;

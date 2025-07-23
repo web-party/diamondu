@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/angular';
-import { HamburgerIngredientsComponent } from './hamburger-ingredients.component';
+import { HamburgerIngredients } from './hamburger-ingredients.component';
 
-const meta: Meta<HamburgerIngredientsComponent> = {
-    component: HamburgerIngredientsComponent,
+const meta: Meta<HamburgerIngredients> = {
+    component: HamburgerIngredients,
     title: 'HamburgerIngredientsComponent',
 };
 export default meta;
-type Story = StoryObj<HamburgerIngredientsComponent>;
+type Story = StoryObj<HamburgerIngredients>;
 
 export const Primary: Story = {
     args: {},

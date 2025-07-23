@@ -18,7 +18,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
     ],
     host: { class: 'block p-5 max-w-6xl text-6xl font-bold tracking-wide' }
 })
-export class MagicTextComponent {
+export class MagicText {
     readonly title = input('kitchen sink');
     private characters$ = interval(400).pipe(
         take(this.title().length + 1),

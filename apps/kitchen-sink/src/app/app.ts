@@ -1,16 +1,17 @@
-import { Component } from '@angular/core';
-import { CompareGhUsersStarsComponent } from './compare-gh-users-stars/compare-gh-users-stars';
-import { MagicTextComponent } from './magic-text/magic-text';
-import { HamburgerIngredientsComponent } from './hamburger-ingredients/hamburger-ingredients.component';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { CompareGhUsersStars } from './compare-gh-users-stars/compare-gh-users-stars';
+import { MagicText } from './magic-text/magic-text';
+import { HamburgerIngredients } from './hamburger-ingredients/hamburger-ingredients.component';
 
 @Component({
     selector: 'd-root',
     templateUrl: './app.html',
     imports: [
-        MagicTextComponent,
-        CompareGhUsersStarsComponent,
-        HamburgerIngredientsComponent,
+        MagicText,
+        CompareGhUsersStars,
+        HamburgerIngredients,
     ],
-    host: { class: 'block' }
+    host: { class: 'block' },
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AppComponent {}
+export class App {}
