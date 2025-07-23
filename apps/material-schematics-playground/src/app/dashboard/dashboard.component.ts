@@ -34,7 +34,7 @@ type Card = {
         AsyncPipe,
     ],
 })
-export class DashboardComponent {
+export class Dashboard {
     @HostBinding('class') classes = 'tw-block tw-p-5';
 
     /** Based on the screen size, switch from standard to one column per row */

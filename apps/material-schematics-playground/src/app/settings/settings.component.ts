@@ -5,6 +5,6 @@ import { ChangeDetectionStrategy, Component, HostBinding } from '@angular/core';
     templateUrl: './settings.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SettingsComponent {
+export class Settings {
     @HostBinding('class') classes = 'tw-block tw-p-5';
 }

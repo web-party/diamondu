@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { GlobalNavComponent } from './global-nav/global-nav.component';
+import { GlobalNav } from './global-nav/global-nav.component';
 
 @Component({
     selector: 'sch-root',
     template: `<sch-global-nav />`,
-    imports: [GlobalNavComponent]
+    imports: [GlobalNav]
 })
-export class AppComponent {
+export class App {
     title = 'material-schematics-playground';
 }

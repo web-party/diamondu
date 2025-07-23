@@ -8,14 +8,14 @@ import {
     withViewTransitions
 } from '@angular/router';
 import { appRoutes } from './app/app.routes';
-import { AppComponent } from './app/app.component';
+import { App } from './app/app.component';
 import { bootstrapApplication } from '@angular/platform-browser';
 
 if (environment.production) {
     enableProdMode();
 }
 
-bootstrapApplication(AppComponent, {
+bootstrapApplication(App, {
     providers: [
         { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'outline' } },
         provideAnimations(),

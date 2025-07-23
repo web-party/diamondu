@@ -16,7 +16,7 @@ import { MatIconButton } from '@angular/material/button';
     changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [MatSidenavContainer, MatSidenav, MatToolbar, MatNavList, MatListItem, RouterLink, RouterLinkActive, MatIcon, MatListItemIcon, MatSidenavContent, MatIconButton, RouterOutlet]
 })
-export class GlobalNavComponent {
+export class GlobalNav {
     private readonly isHandset$ = inject(BreakpointObserver)
         .observe(Breakpoints.Handset)
         .pipe(

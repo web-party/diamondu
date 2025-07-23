@@ -7,15 +7,15 @@ import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
-import { GlobalNavComponent } from './global-nav.component';
+import { GlobalNav } from './global-nav.component';
 
 describe('GlobalNavComponent', () => {
-    let component: GlobalNavComponent;
-    let fixture: ComponentFixture<GlobalNavComponent>;
+    let component: GlobalNav;
+    let fixture: ComponentFixture<GlobalNav>;
 
     beforeEach(waitForAsync(() => {
         TestBed.configureTestingModule({
-            declarations: [GlobalNavComponent],
+            declarations: [GlobalNav],
             imports: [
                 NoopAnimationsModule,
                 LayoutModule,
@@ -29,7 +29,7 @@ describe('GlobalNavComponent', () => {
     }));
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(GlobalNavComponent);
+        fixture = TestBed.createComponent(GlobalNav);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });

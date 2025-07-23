@@ -13,7 +13,7 @@ import { MatRadioGroup, MatRadioButton } from '@angular/material/radio';
     changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [ReactiveFormsModule, MatCard, MatCardHeader, MatCardTitle, MatCardContent, MatFormField, MatInput, MatError, MatButton, MatSelect, MatOption, MatHint, MatRadioGroup, MatRadioButton, MatCardActions]
 })
-export class AddressFormComponent {
+export class AddressForm {
     private readonly fb = inject(FormBuilder);
 
     addressForm = this.fb.group({
