@@ -30,7 +30,7 @@
         "@vueuse/core": "^13.5",
         "chart.js": "^4.5",
         "date-fns": "^2.30.0",
-        "dayjs": "^1.11.10",
+        "dayjs": "^1.11.13",
         "gsap": "^3.12.3",
         "ng2-charts": "^8",
         "octokit": "^2.0.10",
