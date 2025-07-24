@@ -29,7 +29,7 @@
         "@nx/nuxt": "21.2.3",
         "@vueuse/core": "^13.5",
         "chart.js": "^4.5",
-        "date-fns": "^3.6",
+        "date-fns": "^4.1",
         "dayjs": "^1.11.13",
         "gsap": "^3.13",
         "ng2-charts": "^8",
