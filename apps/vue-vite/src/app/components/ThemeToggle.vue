@@ -8,9 +8,10 @@
     import { watchEffect } from 'vue';
 
     const isDark = useDark({ valueDark: 'tw-dark' }),
-            toggleColorMode = useToggle(isDark),
-            vuetifyTheme = useVuetifyTheme(),
-            { name: vuetifyThemeName } = vuetifyTheme.global;
+        toggleColorMode = useToggle(isDark),
+        vuetifyTheme = useVuetifyTheme();
 
-    watchEffect(() => { vuetifyThemeName.value = isDark.value ? 'dark' : 'light' });
+    watchEffect(() => {
+        vuetifyTheme.change(isDark.value ? 'dark' : 'light');
+    });
 </script>
