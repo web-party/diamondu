@@ -10,14 +10,17 @@
     import { computed, onMounted, onUnmounted, ref, watch } from 'vue';
     // import { useCountdown } from '@vueuse/core';
 
-    const props = withDefaults(defineProps<{ startAt?: string }>(), { startAt: '00:10' });
-    // TODO: consider using `dayjs` for better duration support
-    const remainingTime = ref(parse(props.startAt, 'mm:ss', Date.now()));
-    const displayedRemainingTime = computed(() => format(remainingTime.value, 'mm:ss'));
-    const domRemainingTime = computed(() => 'PT' + displayedRemainingTime.value.replace(':', 'M'));
     // TODO: implement aria-live functionality by announcing e.g. every 5 seconds and when finished
-    const finished = computed(() => displayedRemainingTime.value === '00:00');
+    // TODO: consider using `dayjs` for better duration support
+
+    const { startAt = '00:10' } = defineProps<{ startAt?: string }>(),
+        initialRemainingTime = parse(startAt, 'mm:ss', Date.now()),
+        remainingTime = ref(initialRemainingTime),
+        displayedRemainingTime = computed(() => format(remainingTime.value, 'mm:ss')),
+        domRemainingTime = computed(() => 'PT' + displayedRemainingTime.value.replace(':', 'M')),
+        finished = computed(() => displayedRemainingTime.value === '00:00');
     let intervalId: ReturnType<typeof setInterval>;
+
     onMounted(() => {
         intervalId = setInterval(() => {
             remainingTime.value = subSeconds(remainingTime.value, 1);
