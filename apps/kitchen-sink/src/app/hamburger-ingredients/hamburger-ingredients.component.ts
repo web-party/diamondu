@@ -3,47 +3,48 @@ import {
     Component,
     ElementRef,
     AfterViewInit,
-    ViewChild,
-    // ViewChildren,
-    // QueryList
+    viewChild,
 } from '@angular/core';
 import gsap from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 @Component({
     selector: 'd-hamburger-ingredients',
     templateUrl: './hamburger-ingredients.component.html',
-    styles: [`
-        section {
+    styles: [
+        `section {
             @apply w-full h-screen flex items-center justify-center text-[#aaa];
-        }
-    `],
+        }`,
+    ],
     changeDetection: ChangeDetectionStrategy.OnPush,
     host: { class: 'w-full h-full flex flex-col items-center bg-[#111]' }
 })
 export class HamburgerIngredients implements AfterViewInit {
-    @ViewChild('hero') private hero!: ElementRef<SVGElement>;
-    // images = viewChildren();
-    // @ViewChildren(SVGImageElement) images!: QueryList<ElementRef<SVGImageElement>>;
+    private readonly hero = viewChild<ElementRef<SVGElement>>('hero');
 
     ngAfterViewInit(): void {
         gsap.registerPlugin(ScrollTrigger);
 
-        gsap.to(this.hero.nativeElement, { duration: 1, opacity: 1, ease: 'power1.inOut' });
+        gsap.to(this.hero()!.nativeElement, {
+            duration: 1,
+            opacity: 1,
+            ease: 'power1.inOut',
+        });
 
-        gsap.timeline({
+        const tl = gsap.timeline({
             scrollTrigger: {
-                trigger: this.hero.nativeElement,
+                trigger: this.hero()?.nativeElement,
                 start: '0 99%',
                 end: '75% 0',
                 scrub: 1
             }
-        })
-            //.from(this.images.toArray().map(el => el.nativeElement), {
-            .from(this.hero.nativeElement.querySelectorAll('image'), {
+        });
+        gsap.context(() => {
+            tl.from('image', {
                 y: (i) => [0, 830, 435, 500, 670, 290, 280, 350, 300, 420, 560, 350][i],
                 transformOrigin: '50%',
-                rotate: (i) => [0, -12, -9, 4, 10, -5, -8, -9, 9, 4, -5, 3][i]
+                rotate: (i) => [0, -12, -9, 4, 10, -5, -8, -9, 9, 4, -5, 3][i],
             });
+        }, this.hero()?.nativeElement);
     }
 }
