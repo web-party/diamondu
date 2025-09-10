@@ -14,7 +14,7 @@
             </v-card>
         </template>
     </ul>
-    <ul v-else>
+    <ul v-else class="tw-space-y-2">
         <li v-for="item in 5" :key="item">
             <v-skeleton-loader boilerplate type="list-item-avatar-three-line" class="tw-h-full" />
         </li>
