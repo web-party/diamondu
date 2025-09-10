@@ -1,4 +1,4 @@
-import { setup } from '@storybook/vue3';
+import { setup } from '@storybook/vue3-vite';
 import vuetify from '../src/create-vuetify';
 import { withVuetifyTheme } from './withVeutifyTheme.decorator';
 
