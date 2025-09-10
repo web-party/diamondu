@@ -1,3 +1,5 @@
+@use 'vuetify' with ($utilities: false);
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
