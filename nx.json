@@ -15,18 +15,11 @@
             "unitTestRunner": "jest"
         },
         "@nx/angular:component": {
-            "style": "css",
-            "type": "component"
+            "style": "css"
         },
-        "@schematics/angular:component": {
-            "type": "component"
-        },
-        "@nx/angular:directive": {
-            "type": "directive"
-        },
-        "@schematics/angular:directive": {
-            "type": "directive"
-        },
+        "@schematics/angular:component": {},
+        "@nx/angular:directive": {},
+        "@schematics/angular:directive": {},
         "@nx/angular:service": {
             "type": "service"
         },
@@ -109,10 +102,7 @@
             }
         },
         "@nx/eslint:lint": {
-            "inputs": [
-                "default",
-                "{workspaceRoot}/eslint.config.mjs"
-            ],
+            "inputs": ["default", "{workspaceRoot}/eslint.config.mjs"],
             "cache": true
         },
         "e2e-ci--**/*": {
