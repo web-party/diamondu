@@ -1,6 +1,7 @@
 export default {
     displayName: 'kitchen-sink',
     preset: '../../jest.preset.js',
+    testEnvironment: 'jsdom',
     setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
     globals: {},
     coverageDirectory: '../../coverage/apps/kitchen-sink',
