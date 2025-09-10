@@ -6,7 +6,7 @@ import { MatCard, MatCardHeader, MatCardTitle, MatCardContent } from '@angular/m
 import { MatIconButton } from '@angular/material/button';
 import { MatMenuTrigger, MatMenu, MatMenuItem } from '@angular/material/menu';
 import { MatIcon } from '@angular/material/icon';
-import { AsyncPipe } from '@angular/common';
+import { toSignal } from '@angular/core/rxjs-interop';
 
 type Card = {
     title: string,
@@ -31,14 +31,13 @@ type Card = {
         MatMenu,
         MatMenuItem,
         MatCardContent,
-        AsyncPipe,
     ],
 })
 export class Dashboard {
     @HostBinding('class') classes = 'tw-block tw-p-5';
 
     /** Based on the screen size, switch from standard to one column per row */
-    cards = inject(BreakpointObserver)
+    private readonly cards$ = inject(BreakpointObserver)
         .observe(Breakpoints.Handset)
         .pipe(
             map(({ matches }): Card[] => {
@@ -59,4 +58,6 @@ export class Dashboard {
                 ];
             })
         );
+
+    protected cards = toSignal(this.cards$);
 }

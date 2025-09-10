@@ -1,6 +1,6 @@
 <h1 class="mat-h1">Dashboard</h1>
 <mat-grid-list gutterSize="16" cols="2" rowHeight="350px">
-    @for (card of cards | async; track card) {
+    @for (card of cards(); track card) {
         <mat-grid-tile [colspan]="card.cols" [rowspan]="card.rows">
             <mat-card appearance="outlined" class="tw-w-full tw-h-full" [class.!tw-hidden]="card.hidden">
                 <mat-card-header>
