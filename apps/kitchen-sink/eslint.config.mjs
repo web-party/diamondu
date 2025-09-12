@@ -28,6 +28,7 @@ export default [
             ],
             '@angular-eslint/prefer-signals': 'warn',
             '@angular-eslint/prefer-on-push-component-change-detection': 'warn',
+            '@typescript-eslint/no-non-null-assertion': 'off',
         }
     },
     {
