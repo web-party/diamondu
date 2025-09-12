@@ -72,7 +72,8 @@
             "executor": "@nx/jest:jest",
             "outputs": ["{workspaceRoot}/coverage/apps/kitchen-sink"],
             "options": {
-                "jestConfig": "apps/kitchen-sink/jest.config.ts"
+                "jestConfig": "apps/kitchen-sink/jest.config.ts",
+                "tsConfig": "apps/kitchen-sink/tsconfig.spec.json"
             }
         },
         "storybook": {
