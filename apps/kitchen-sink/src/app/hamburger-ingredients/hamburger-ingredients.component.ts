@@ -20,12 +20,12 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
     host: { class: 'w-full h-full flex flex-col items-center bg-[#111]' }
 })
 export class HamburgerIngredients implements AfterViewInit {
-    private readonly hero = viewChild<ElementRef<SVGElement>>('hero');
+    private readonly hero = viewChild.required<ElementRef<SVGElement>>('hero');
 
     ngAfterViewInit(): void {
         gsap.registerPlugin(ScrollTrigger);
 
-        gsap.to(this.hero()!.nativeElement, {
+        gsap.to(this.hero().nativeElement, {
             duration: 1,
             opacity: 1,
             ease: 'power1.inOut',
@@ -33,7 +33,7 @@ export class HamburgerIngredients implements AfterViewInit {
 
         const tl = gsap.timeline({
             scrollTrigger: {
-                trigger: this.hero()?.nativeElement,
+                trigger: this.hero().nativeElement,
                 start: '0 99%',
                 end: '75% 0',
                 scrub: 1
