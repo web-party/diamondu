@@ -8,6 +8,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
     selector: 'd-magic-text',
     templateUrl: './magic-text.html',
     changeDetection: ChangeDetectionStrategy.OnPush,
+    // TODO: migrate to modern enter animation approach
     animations: [
         trigger('fadeInChar', [
             transition(':enter', [
