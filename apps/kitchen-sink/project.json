@@ -81,8 +81,7 @@
             "options": {
                 "configDir": "apps/kitchen-sink/.storybook",
                 "compodoc": false,
-                "browserTarget": "kitchen-sink:build",
-                "styles": ["apps/kitchen-sink/src/styles.scss"]
+                "browserTarget": "kitchen-sink:build"
             }
         },
         "build-storybook": {
