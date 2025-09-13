@@ -45,6 +45,6 @@ export class HamburgerIngredients implements AfterViewInit {
                 transformOrigin: '50%',
                 rotate: (i) => [0, -12, -9, 4, 10, -5, -8, -9, 9, 4, -5, 3][i],
             });
-        }, this.hero()?.nativeElement);
+        }, this.hero());
     }
 }
