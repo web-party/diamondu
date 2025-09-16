@@ -3,11 +3,14 @@
     "compilerOptions": {
         "emitDecoratorMetadata": true
     },
-    "files": ["../src/polyfills.ts"],
-    "exclude": ["../**/*.spec.ts", "main.ts"],
+    "exclude": [
+        "../**/*.spec.ts",
+        "main.ts",
+        // "../src/app/**/*.service.ts", // for compodoc
+    ],
     "include": [
         "../src/**/*.stories.ts",
-        "../src/**/*.stories.mdx",
+        // "../src/app/**/*.ts", // for compodoc
         "*.ts",
         "*.js"
     ]

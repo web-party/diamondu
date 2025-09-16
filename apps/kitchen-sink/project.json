@@ -13,7 +13,6 @@
                 "outputPath": "dist/apps/kitchen-sink",
                 "index": "apps/kitchen-sink/src/index.html",
                 "main": "apps/kitchen-sink/src/main.ts",
-                "polyfills": "apps/kitchen-sink/src/polyfills.ts",
                 "tsConfig": "apps/kitchen-sink/tsconfig.app.json",
                 "assets": [
                     "apps/kitchen-sink/src/favicon.ico",
