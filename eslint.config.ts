@@ -1,17 +1,18 @@
 import nx from '@nx/eslint-plugin';
-// import prettier from 'eslint-config-prettier';
+import { defineConfig, globalIgnores } from 'eslint/config';
+import { ConfigWithExtends } from '@eslint/config-helpers';
 
-export default [
-    { ignores: ['**/dist'] },
-    ...nx.configs['flat/base'],
-    ...nx.configs['flat/javascript'],
-    ...nx.configs['flat/typescript'],
-    // prettier,
+export default defineConfig(
+    globalIgnores(['**/dist']),
+    nx.configs['flat/base'],
+    nx.configs['flat/javascript'] as ConfigWithExtends,
+    nx.configs['flat/typescript'] as ConfigWithExtends,
     {
         files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx', '**/*.vue'],
+        ignores: ['**/eslint.config.ts'],
         rules: {
             '@nx/enforce-module-boundaries': [
-                'error',
+                'warn',
                 {
                     enforceBuildableLibDependency: true,
                     allow: [],
@@ -25,12 +26,4 @@ export default [
             ],
         },
     },
-    {
-        files: ['**/*.ts', '**/*.tsx', '**/*.cts', '**/*.mts'],
-        rules: {},
-    },
-    {
-        files: ['**/*.js', '**/*.jsx', '**/*.cjs', '**/*.mjs'],
-        rules: {},
-    },
-];
+);

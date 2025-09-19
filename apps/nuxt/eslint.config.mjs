@@ -1,5 +1,5 @@
-import withNuxt from './.nuxt/eslint.config.mjs'
-// import baseConfig from '../../eslint.config.mjs';
+import withNuxt from './.nuxt/eslint.config.mjs';
+// import baseConfig from '../../eslint.config';
 
 export default withNuxt(
     {
@@ -10,4 +10,4 @@ export default withNuxt(
             'vue/max-attributes-per-line': 'off',
         },
     },
-)/* .prepend(baseConfig) */;
+)/* .prepend(baseConfig) */; // would probably require https://eslint.nuxt.com/packages/module#custom-config-presets

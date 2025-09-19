@@ -1,10 +1,12 @@
-import baseConfig from '../../eslint.config.mjs';
+import baseConfig from '../../eslint.config';
 import nx from '@nx/eslint-plugin';
+import { defineConfig } from 'eslint/config';
+import { ConfigWithExtends } from '@eslint/config-helpers';
 
-export default [
-    ...baseConfig,
-    ...nx.configs['flat/angular'],
-    ...nx.configs['flat/angular-template'],
+export default defineConfig(
+    baseConfig,
+    nx.configs['flat/angular'] as ConfigWithExtends,
+    nx.configs['flat/angular-template'] as ConfigWithExtends,
     {
         files: ['**/*.ts'],
         rules: {
@@ -27,4 +29,4 @@ export default [
             ],
         },
     }
-];
+);
