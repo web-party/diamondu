@@ -5,6 +5,7 @@ import { ConfigWithExtends } from '@eslint/config-helpers';
 export default defineConfig(
     globalIgnores(['**/dist']),
     nx.configs['flat/base'],
+    // these type assertions are workarounds until the upstream fixes it
     nx.configs['flat/javascript'] as ConfigWithExtends,
     nx.configs['flat/typescript'] as ConfigWithExtends,
     {
