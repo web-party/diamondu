@@ -10,4 +10,4 @@ export default withNuxt(
             'vue/max-attributes-per-line': 'off',
         },
     },
-)/* .prepend(baseConfig) */; // would probably require https://eslint.nuxt.com/packages/module#custom-config-presets
+); /* .prepend(baseConfig) */ // would probably require https://eslint.nuxt.com/packages/module#custom-config-presets

@@ -1,21 +1,23 @@
 import { defineConfig } from 'vitest/config';
-import vue from '@vitejs/plugin-vue';
-import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
+import { defineVitestProject } from '@nuxt/test-utils/config';
 
 export default defineConfig({
-    root: __dirname,
-    cacheDir: '../../node_modules/.vite/nuxt',
-    plugins: [vue(), nxViteTsPaths()],
     test: {
-        globals: true,
-        cacheDir: '../../node_modules/.vitest',
-        environment: 'jsdom',
-        include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
-
-        reporters: ['default'],
-        coverage: {
-            reportsDirectory: '../../coverage/nuxt',
-            provider: 'v8',
-        },
+        projects: [
+            {
+                test: {
+                    name: 'unit',
+                    include: ['test/{e2e,unit}/*.{test,spec}.ts'],
+                    environment: 'node',
+                },
+            },
+            await defineVitestProject({
+                test: {
+                    name: 'nuxt',
+                    include: ['test/nuxt/*.{test,spec}.ts'],
+                    environment: 'nuxt',
+                },
+            }),
+        ],
     },
 });

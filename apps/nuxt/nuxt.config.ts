@@ -1,39 +1,40 @@
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
-import { defineNuxtConfig } from 'nuxt/config';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-    workspaceDir: '../../',
-    srcDir: 'src',
-
-    devServer: {
-        host: 'localhost',
-        port: 4200,
-    },
-
-    typescript: {
-        typeCheck: true,
-        tsConfig: {
-            extends: './tsconfig.app.json',
-        },
-    },
+    modules: ['@nuxt/eslint', '@nuxt/test-utils/module'],
 
     imports: {
         autoImport: true,
     },
 
     css: ['~/assets/css/styles.css'],
+    srcDir: 'src',
+    workspaceDir: '../../',
+
+    devServer: {
+        host: 'localhost',
+        port: 4200,
+    },
+
+    compatibilityDate: '2024-08-03',
 
     vite: {
         plugins: [nxViteTsPaths()],
     },
 
-    compatibilityDate: '2024-08-03',
-    modules: ['@nuxt/eslint'],
+    typescript: {
+        typeCheck: true,
+    },
     eslint: {
         config: {
-            stylistic: true,
+            stylistic: {
+                indent: 4,
+                semi: true,
+                severity: 'warn',
+                jsx: false,
+            },
             // standalone: false,
-        }
+        },
     },
 });
