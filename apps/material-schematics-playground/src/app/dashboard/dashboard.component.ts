@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, inject, HostBinding } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import { MatGridList, MatGridTile } from '@angular/material/grid-list';
@@ -32,10 +32,9 @@ type Card = {
         MatMenuItem,
         MatCardContent,
     ],
+    host: { class: 'tw-block tw-p-5' }
 })
 export class Dashboard {
-    @HostBinding('class') classes = 'tw-block tw-p-5';
-
     /** Based on the screen size, switch from standard to one column per row */
     private readonly cards$ = inject(BreakpointObserver)
         .observe(Breakpoints.Handset)
