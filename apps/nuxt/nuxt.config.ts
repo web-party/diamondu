@@ -25,6 +25,10 @@ export default defineNuxtConfig({
 
     typescript: {
         typeCheck: true,
+        tsConfig: {
+            // might not be needed
+            extends: '../../../tsconfig.base.json',
+        },
     },
     eslint: {
         config: {
