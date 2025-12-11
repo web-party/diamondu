@@ -1,6 +1,6 @@
 import nx from '@nx/eslint-plugin';
 import { defineConfig, globalIgnores } from 'eslint/config';
-import { ConfigWithExtends } from '@eslint/config-helpers';
+import type { ConfigWithExtends } from '@eslint/config-helpers';
 
 export default defineConfig(
     globalIgnores(['**/dist']),
