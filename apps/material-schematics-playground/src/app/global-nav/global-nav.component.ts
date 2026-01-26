@@ -14,7 +14,20 @@ import { MatIconButton } from '@angular/material/button';
     templateUrl: './global-nav.component.html',
     styleUrls: ['./global-nav.component.css'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [MatSidenavContainer, MatSidenav, MatToolbar, MatNavList, MatListItem, RouterLink, RouterLinkActive, MatIcon, MatListItemIcon, MatSidenavContent, MatIconButton, RouterOutlet]
+    imports: [
+        MatSidenavContainer,
+        MatSidenav,
+        MatToolbar,
+        MatNavList,
+        MatListItem,
+        RouterLink,
+        RouterLinkActive,
+        MatIcon,
+        MatListItemIcon,
+        MatSidenavContent,
+        MatIconButton,
+        RouterOutlet
+    ]
 })
 export class GlobalNav {
     private readonly isHandset$ = inject(BreakpointObserver)
