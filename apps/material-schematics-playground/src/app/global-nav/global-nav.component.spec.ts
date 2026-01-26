@@ -1,34 +1,16 @@
-import { LayoutModule } from '@angular/cdk/layout';
-import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { MatListModule } from '@angular/material/list';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatToolbarModule } from '@angular/material/toolbar';
-
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { GlobalNav } from './global-nav.component';
+import { provideRouter } from '@angular/router';
 
 describe('GlobalNavComponent', () => {
     let component: GlobalNav;
     let fixture: ComponentFixture<GlobalNav>;
 
-    beforeEach(waitForAsync(() => {
-        TestBed.configureTestingModule({
-            declarations: [GlobalNav],
-            imports: [
-                NoopAnimationsModule,
-                LayoutModule,
-                MatButtonModule,
-                MatIconModule,
-                MatListModule,
-                MatSidenavModule,
-                MatToolbarModule
-            ]
+    beforeEach(async () => {
+        await TestBed.configureTestingModule({
+            providers: [provideRouter([])]
         }).compileComponents();
-    }));
 
-    beforeEach(() => {
         fixture = TestBed.createComponent(GlobalNav);
         component = fixture.componentInstance;
         fixture.detectChanges();

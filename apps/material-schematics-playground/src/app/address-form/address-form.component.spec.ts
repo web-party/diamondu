@@ -13,20 +13,20 @@ describe('AddressFormComponent', () => {
     let component: AddressForm;
     let fixture: ComponentFixture<AddressForm>;
 
-    beforeEach(waitForAsync(() => {
-        TestBed.configureTestingModule({
-            declarations: [AddressForm],
-            imports: [
-                NoopAnimationsModule,
-                ReactiveFormsModule,
-                MatButtonModule,
-                MatCardModule,
-                MatInputModule,
-                MatRadioModule,
-                MatSelectModule
-            ]
-        }).compileComponents();
-    }));
+    // beforeEach(waitForAsync(() => {
+    //     TestBed.configureTestingModule({
+    //         declarations: [AddressForm],
+    //         imports: [
+    //             NoopAnimationsModule,
+    //             ReactiveFormsModule,
+    //             MatButtonModule,
+    //             MatCardModule,
+    //             MatInputModule,
+    //             MatRadioModule,
+    //             MatSelectModule
+    //         ]
+    //     }).compileComponents();
+    // }));
 
     beforeEach(() => {
         fixture = TestBed.createComponent(AddressForm);
