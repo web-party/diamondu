@@ -1,14 +1,13 @@
 import baseConfig from '../../eslint.config';
-import nx from '@nx/eslint-plugin';
-import storybook from 'eslint-plugin-storybook';
-import { defineConfig } from 'eslint/config';
-import { ConfigWithExtends } from '@eslint/config-helpers';
+import { configs as nxConfigs } from '@nx/eslint-plugin';
+import { configs as sbConfigs } from 'eslint-plugin-storybook';
+import { Config, defineConfig } from 'eslint/config';
 
 export default defineConfig(
     baseConfig,
-    nx.configs['flat/angular'] as ConfigWithExtends,
-    nx.configs['flat/angular-template'] as ConfigWithExtends,
-    storybook.configs['flat/recommended'],
+    nxConfigs['flat/angular'] as Config,
+    nxConfigs['flat/angular-template'] as Config,
+    sbConfigs['flat/recommended'] as Config,
     {
         files: ['**/*.ts'],
         rules: {
