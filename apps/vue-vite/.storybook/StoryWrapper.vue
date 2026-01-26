@@ -1,7 +1,7 @@
 <template>
     <v-app>
         <v-main>
-            <slot name="story"></slot>
+            <slot name="story" />
         </v-main>
     </v-app>
 </template>

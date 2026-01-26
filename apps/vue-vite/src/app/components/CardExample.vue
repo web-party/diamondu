@@ -11,7 +11,7 @@
 
             <v-card-subtitle>
                 <span class="me-1">Local Favorite</span>
-                <v-icon color="error" icon="mdi-fire-circle" size="small"></v-icon>
+                <v-icon color="error" icon="mdi-fire-circle" size="small" />
             </v-card-subtitle>
         </v-card-item>
 
@@ -24,7 +24,7 @@
                     half-increments
                     readonly
                     size="small"
-                ></v-rating>
+                />
 
                 <div class="text-grey ms-4">
                     4.5 (413)
@@ -38,7 +38,7 @@
             <div>Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.</div>
         </v-card-text>
 
-        <v-divider class="mx-4 mb-1"></v-divider>
+        <v-divider class="mx-4 mb-1" />
 
         <v-card-title>Tonight's availability</v-card-title>
 
