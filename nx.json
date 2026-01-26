@@ -102,7 +102,7 @@
             }
         },
         "@nx/eslint:lint": {
-            "inputs": ["default", "{workspaceRoot}/eslint.config.mjs"],
+            "inputs": ["default", "{workspaceRoot}/eslint.config.ts"],
             "cache": true
         },
         "e2e-ci--**/*": {
@@ -178,6 +178,5 @@
             }
         }
     ],
-    "defaultBase": "main",
-    "neverConnectToCloud": true
+    "defaultBase": "main"
 }
