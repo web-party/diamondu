@@ -1,4 +1,4 @@
-import { afterEach, beforeEach, describe, it, vi } from 'vitest';
+import { afterEach, beforeEach, describe, it, vi, expect } from 'vitest';
 import { mount } from '@vue/test-utils';
 import Countdown from './Countdown.vue';
 

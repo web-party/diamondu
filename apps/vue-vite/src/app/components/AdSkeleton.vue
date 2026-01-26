@@ -1,9 +1,8 @@
 <template>
-    <!-- TODO: resolve duplications -->
     <div class="tw-relative tw-mb-4 tw-h-[250px] tw-delay-0 tw-duration-500">
         <div class="tw-absolute tw-h-full tw-w-[180px]">
             <div class="tw-shadow-3 tw-overflow-hidden tw-rounded-lg tw-border tw-border-[rgba(133,214,251,0.3)]">
-                <span v-for="(width, i) of itemWidths" :key="i" class="skeleton-item" :style="`width: ${width}%`"></span>
+                <span v-for="(width, i) of itemWidths" :key="i" class="skeleton-item" :style="`width: ${width}%`" />
             </div>
         </div>
     </div>
