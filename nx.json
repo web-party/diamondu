@@ -84,10 +84,6 @@
             ],
             "cache": true
         },
-        "@nx/vite:test": {
-            "inputs": ["default", "^default", "{workspaceRoot}/jest.preset.js"],
-            "cache": true
-        },
         "@nx/jest:jest": {
             "inputs": ["default", "^default", "{workspaceRoot}/jest.preset.js"],
             "cache": true,
@@ -107,6 +103,10 @@
         },
         "e2e-ci--**/*": {
             "dependsOn": ["^build"]
+        },
+        "@nx/vitest:test": {
+            "inputs": ["default", "^default", "{workspaceRoot}/jest.preset.js"],
+            "cache": true
         }
     },
     "namedInputs": {
@@ -143,7 +143,6 @@
             "options": {
                 "buildTargetName": "build",
                 "previewTargetName": "preview",
-                "testTargetName": "test",
                 "serveTargetName": "serve",
                 "serveStaticTargetName": "serve-static"
             }
@@ -175,6 +174,12 @@
                 "serveStorybookTargetName": "storybook",
                 "testStorybookTargetName": "test-storybook",
                 "staticStorybookTargetName": "static-storybook"
+            }
+        },
+        {
+            "plugin": "@nx/vitest",
+            "options": {
+                "testTargetName": "test"
             }
         }
     ],
