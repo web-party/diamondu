@@ -1,7 +1,7 @@
 <template>
-    <ul aria-label="Social links" class="tw-flex tw-space-x-2">
-        <li v-for="link of links" :key="link.id" class="tw-opacity-50 hover:tw-opacity-100">
-            <a :href="link.url" :aria-label="link.label" class="tw-inline-block">
+    <ul aria-label="Social links" class="flex gap-2">
+        <li v-for="link of links" :key="link.id" class="opacity-50 hover:opacity-100">
+            <a :href="link.url" :aria-label="link.label" class="inline-block">
                 <!-- TODO: mdi social icons are deprecated, switch to a different (social) icon set instead  -->
                 <v-icon :icon="`mdi-${link.mdi}`" size="large" />
             </a>

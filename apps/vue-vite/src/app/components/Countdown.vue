@@ -1,6 +1,6 @@
 <template>
     <!-- :key is important here as it ensures to replace the whole element every second for animation purposes -->
-    <time :key="displayedRemainingTime" :datetime="domRemainingTime" aria-label="Remaining time" class="tw-px-2 tw-rounded tw-text-3xl tw-w-min" :class="{ ping: !finished }">
+    <time :key="displayedRemainingTime" :datetime="domRemainingTime" aria-label="Remaining time" class="px-2 rounded text-3xl w-min" :class="{ ping: !finished }">
         {{ displayedRemainingTime }}
     </time>
 </template>

@@ -1,15 +1,17 @@
 <template>
-    <main class="tw-grid tw-gap-4 tw-grid-cols-1 lg:tw-grid-cols-3">
-        <section class="lg:tw-col-span-1 tw-space-y-5">
+    <main class="grid gap-4 grid-cols-1 lg:grid-cols-3">
+        <section class="lg:col-span-1 space-y-5">
             <AvatarStack />
-            <Countdown class="tw-block" />
+            <Countdown class="block" />
             <BankAccountDetails />
             <SocialLinks />
             <ThemeToggle />
         </section>
-        <section class="lg:tw-col-span-2 tw-space-y-4">
+        <section class="lg:col-span-2 space-y-4">
             <CollectionLayoutSwitch ref="layoutRef" />
-            <ProductCollection :layout="layoutRef?.layout || CollectionLayout.grid" />
+            <ProductCollection
+                :layout="layoutRef?.layout || CollectionLayout.grid"
+            />
         </section>
     </main>
 </template>
@@ -24,5 +26,5 @@
     import ThemeToggle from './components/ThemeToggle.vue';
     import { ref } from 'vue';
 
-    const layoutRef = ref<InstanceType<typeof CollectionLayoutSwitch>|null>();
+    const layoutRef = ref<InstanceType<typeof CollectionLayoutSwitch> | null>();
 </script>

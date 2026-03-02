@@ -1,8 +1,10 @@
 <template>
-    <div class="tw-relative tw-mb-4 tw-h-[250px] tw-delay-0 tw-duration-500">
-        <div class="tw-absolute tw-h-full tw-w-[180px]">
-            <div class="tw-shadow-3 tw-overflow-hidden tw-rounded-lg tw-border tw-border-[rgba(133,214,251,0.3)]">
-                <span v-for="(width, i) of itemWidths" :key="i" class="skeleton-item" :style="`width: ${width}%`" />
+    <div class="relative mb-4 h-[250px] duration-500">
+        <div class="absolute h-full w-45">
+            <div class="shadow-3 overflow-hidden rounded-lg border border-sky-300/30">
+                <span v-for="(width, i) of itemWidths" :key="i" :style="`width: ${width}%`"
+                      class="block mx-2 mb-2 mt-3 h-5 animate-[pulse_1s_ease-in-out_infinite] bg-sky-300/30"
+                />
             </div>
         </div>
     </div>
@@ -11,9 +13,3 @@
 <script setup lang="ts">
     const itemWidths = [40, 70, 50, 80, 70, 50, 80];
 </script>
-
-<style scoped lang="postcss">
-    .skeleton-item {
-        @apply tw-block tw-mx-2 tw-mb-2 tw-mt-3 tw-h-[20px] tw-animate-[pulse_1s_ease-in-out_infinite] tw-bg-[rgba(133,214,251,0.3)];
-    }
-</style>

@@ -21,7 +21,8 @@
                     "apps/material-schematics-playground/src/assets"
                 ],
                 "styles": [
-                    "apps/material-schematics-playground/src/styles.scss"
+                    "apps/material-schematics-playground/src/styles.scss",
+                    "apps/material-schematics-playground/src/tw.css"
                 ],
                 "scripts": []
             },

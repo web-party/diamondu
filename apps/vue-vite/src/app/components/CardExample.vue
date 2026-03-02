@@ -1,10 +1,10 @@
 <template>
-    <v-card :loading="reserving" class="!tw-rounded-xl" max-width="374">
+    <v-card :loading="reserving" class="rounded-xl!" max-width="374">
         <template #loader="{ isActive }">
             <v-progress-linear :active="isActive" color="deep-purple" height="4" indeterminate />
         </template>
 
-        <v-img cover class="tw-grayscale hover:tw-grayscale-0" height="250" src="https://cdn.vuetifyjs.com/images/cards/cooking.png" />
+        <v-img cover class="grayscale hover:grayscale-0" height="250" src="https://cdn.vuetifyjs.com/images/cards/cooking.png" />
 
         <v-card-item>
             <v-card-title class="animate-focus-in-out">{{ productName }}</v-card-title>
