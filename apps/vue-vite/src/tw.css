@@ -1,0 +1,9 @@
+@import 'tailwindcss' source('./app');
+@source '../index.html';
+@source './create-vuetify.ts';
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --color-purple-980: #1e0730;
+    --color-red-980: #4c0b0b;
+}

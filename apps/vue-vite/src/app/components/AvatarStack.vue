@@ -3,7 +3,7 @@
     <ul aria-label="Avatar stack">
         <v-avatar tag="li" v-for="person of persons" :key="person.id"
                   :image="person.url" size="x-large" variant="outlined"
-                  class="-tw-mr-4 !tw-border-4 !tw-bg-white hover:tw-scale-125 !tw-transition-transform"
+                  class="-mr-4 border-4! bg-white! hover:scale-125 transition-transform!"
         />
     </ul>
 </template>

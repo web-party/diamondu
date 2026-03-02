@@ -16,7 +16,7 @@ describe('Countdown', () => {
         expect(wrapper.find('time').element).toMatchInlineSnapshot(`
           <time
             aria-label="Remaining time"
-            class="tw-px-2 tw-rounded tw-text-3xl tw-w-min ping"
+            class="px-2 rounded text-3xl w-min ping"
             data-v-03072b6d=""
             datetime="PT00M10"
           >

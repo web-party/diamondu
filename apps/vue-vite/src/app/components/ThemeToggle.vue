@@ -7,7 +7,7 @@
     import { useDark, useToggle } from '@vueuse/core';
     import { watchEffect } from 'vue';
 
-    const isDark = useDark({ valueDark: 'tw-dark' }),
+    const isDark = useDark({ valueDark: 'dark' }),
         toggleColorMode = useToggle(isDark),
         vuetifyTheme = useVuetifyTheme();
 

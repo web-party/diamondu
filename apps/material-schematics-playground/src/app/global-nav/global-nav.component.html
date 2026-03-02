@@ -1,18 +1,18 @@
-<mat-sidenav-container class="tw-h-full">
-    <mat-sidenav #drawer class="tw-w-[25ch]" fixedInViewport
+<mat-sidenav-container class="h-full">
+    <mat-sidenav #drawer class="w-[25ch]" fixedInViewport
                  [attr.role]="isNarrowViewport() ? 'dialog' : 'navigation'"
                  [mode]="isNarrowViewport() ? 'over' : 'side'"
                  [opened]="!isNarrowViewport()">
-        <mat-toolbar class="!tw-bg-inherit">Menu</mat-toolbar>
+        <mat-toolbar class="bg-inherit!">Menu</mat-toolbar>
         <mat-nav-list>
             <a mat-list-item routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-                <mat-icon matListItemIcon class="!tw-mr-3">dashboard</mat-icon>Dashboard
+                <mat-icon matListItemIcon class="mr-3!">dashboard</mat-icon>Dashboard
             </a>
             <a mat-list-item routerLink="/address-form" routerLinkActive="active">
-                <mat-icon matListItemIcon class="!tw-mr-3">home</mat-icon>Address Form
+                <mat-icon matListItemIcon class="mr-3!">home</mat-icon>Address Form
             </a>
             <a mat-list-item routerLink="/settings" routerLinkActive="active">
-                <mat-icon matListItemIcon class="!tw-mr-3">settings</mat-icon>Settings
+                <mat-icon matListItemIcon class="mr-3!">settings</mat-icon>Settings
             </a>
             <a mat-list-item routerLink="/floor-plan" routerLinkActive="active">
                 Floor plan
@@ -20,7 +20,7 @@
         </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
-        <mat-toolbar color="primary" class="tw-sticky tw-top-0 tw-z-10 !tw-backdrop-blur-sm !tw-bg-[#795548]/50">
+        <mat-toolbar color="primary" class="sticky top-0 z-10 backdrop-blur-sm! bg-[#795548]/50!">
             @if (isNarrowViewport()) {
                 <button
                     type="button"

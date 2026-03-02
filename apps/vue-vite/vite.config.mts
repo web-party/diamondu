@@ -2,6 +2,7 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
+import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
     build: {
@@ -12,7 +13,6 @@ export default defineConfig({
         },
     },
     cacheDir: '../../node_modules/.vite/vue-vite',
-
     server: {
         port: 4200,
         host: 'localhost',
@@ -26,7 +26,7 @@ export default defineConfig({
         host: 'localhost',
     },
 
-    plugins: [vue(), nxViteTsPaths()],
+    plugins: [vue(), nxViteTsPaths(), tailwindcss()],
 
     test: {
         reporters: ['default'],
