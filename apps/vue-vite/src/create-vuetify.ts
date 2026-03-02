@@ -9,5 +9,10 @@ export default createVuetify({
     components,
     directives,
     theme: { defaultTheme: 'dark' },
-    blueprint: md3
+    blueprint: md3,
+    defaults: {
+        VBtn: {
+            class: 'cursor-pointer',
+        }
+    }
 });

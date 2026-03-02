@@ -32,7 +32,7 @@ type Card = {
         MatMenuItem,
         MatCardContent,
     ],
-    host: { class: 'tw-block tw-p-5' }
+    host: { class: 'block p-5' }
 })
 export class Dashboard {
     /** Based on the screen size, switch from standard to one column per row */

@@ -6,5 +6,5 @@ import { ChangeDetectionStrategy, Component, HostBinding } from '@angular/core';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Settings {
-    @HostBinding('class') classes = 'tw-block tw-p-5';
+    @HostBinding('class') classes = 'block p-5';
 }

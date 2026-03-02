@@ -5,3 +5,7 @@
         </v-main>
     </v-app>
 </template>
+
+<script setup>
+    import '../src/tw.css';
+</script>

@@ -1,0 +1,17 @@
+@import 'tailwindcss' source('./app');
+
+:root {
+    body {
+        @apply p-4 bg-indigo-900 text-indigo-300;
+    }
+}
+
+@theme {
+    --animate-fade-in: fade-in 300ms ease-in;
+
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+        }
+    }
+}
