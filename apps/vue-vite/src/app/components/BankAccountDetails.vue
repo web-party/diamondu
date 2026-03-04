@@ -20,7 +20,7 @@
 </template>
 
 <script setup lang="ts">
-    import { faker } from '@faker-js/faker/locale/de';
+    import { fakerDE as faker } from '@faker-js/faker';
     import { useClipboard } from '@vueuse/core';
     import { computed, ref } from 'vue';
 

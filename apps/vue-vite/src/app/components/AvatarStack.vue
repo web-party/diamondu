@@ -9,9 +9,9 @@
 </template>
 
 <script setup lang="ts">
-    import { faker } from '@faker-js/faker/locale/de';
+    import { faker } from '@faker-js/faker';
 
-    const persons = [...new Array(6)].map(() => {
+    const persons = Array.from({ length: 6 }).map(() => {
         return { id: Symbol(), url: faker.image.avatar() };
     });
 </script>
