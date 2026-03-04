@@ -11,13 +11,14 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 @Component({
     selector: 'd-hamburger-ingredients',
     templateUrl: './hamburger-ingredients.component.html',
-    styles: [
-        `section {
-            @apply w-full h-screen flex items-center justify-center text-[#aaa];
-        }`,
-    ],
+    styles: [`
+        @reference "../../tw.css";
+        section {
+            @apply w-full h-screen flex items-center justify-center text-zinc-400;
+        }
+    `],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    host: { class: 'w-full h-full flex flex-col items-center bg-[#111]' }
+    host: { class: 'w-full h-full flex flex-col items-center bg-zinc-950' }
 })
 export class HamburgerIngredients implements AfterViewInit {
     private readonly hero = viewChild.required<ElementRef<SVGElement>>('hero');
