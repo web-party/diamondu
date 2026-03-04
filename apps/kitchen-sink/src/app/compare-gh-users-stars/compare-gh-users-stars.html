@@ -1,3 +1,4 @@
-<canvas baseChart type="bar" [data]="chartData" class="w-[40rem]"
-        [options]="chartOptions" [legend]="false"
+<canvas baseChart type="bar" class="w-160"
+        [options]="chartOptions" [legend]="false" [labels]="this.usernames()"
+        [datasets]="[{ data: series(), label: 'Starred Repositories' }]"
 ></canvas>

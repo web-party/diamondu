@@ -1,28 +1,35 @@
-import { Injectable } from '@angular/core';
-// import { Octokit } from 'octokit';
-
-interface ViewItem {
-    username: string;
-    stars: number;
-    // avatar
-}
+import { Injectable, inject } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { catchError, map } from 'rxjs/operators';
+import { Observable, of, forkJoin } from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
 })
 export class StarredReposService {
-    // private octokit = new Octokit({ auth: `personal-access-token123` });
+    private http = inject(HttpClient);
 
-    // https://api.github.com/users/web-party/starred
-    // https://octokit.github.io/rest.js/v19#activity-list-repos-starred-by-user
-    count(ghUsername: string): ViewItem;
-    count(ghUsername: string[]): ViewItem[];
-    count(ghUsername: string | string[]): ViewItem | ViewItem[] {
-        // this.octokit.rest.users
+    count(ghUsername: string): Observable<number>;
+    count(ghUsername: string[]): Observable<number[]>;
+    count(ghUsername: string | string[]): Observable<number|number[]> {
         if (typeof ghUsername === 'string') {
-            return { username: ghUsername, stars: 0 };
+            return this.getStarCount(ghUsername);
         } else {
-            return [];
+            return forkJoin(ghUsername.map(u => this.getStarCount(u)));
         }
+    }
+
+    private getStarCount(username: string): Observable<number> {
+        const response = this.http.get<{ stars: number }>(
+            'http://localhost:4200/api/github/stars',
+            { params: { username }, mode: 'cors' }
+        );
+        return response.pipe(
+            map((v) => v.stars),
+            catchError(err => {
+                console.error(err);
+                return of(0);
+            }),
+        );
     }
 }
