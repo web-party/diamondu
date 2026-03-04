@@ -59,7 +59,7 @@
 
 <script setup lang="ts">
     import { onUnmounted, ref } from 'vue';
-    import { faker } from '@faker-js/faker/locale/de';
+    import { faker } from '@faker-js/faker';
 
     const reserving = ref(false);
     const selection = ref(1);
