@@ -8,7 +8,7 @@
         <template v-else>
             <v-card v-for="product of products" :key="product.id" tag="li" class="h-full relative">
                 <v-btn @click="product.liked = !product.liked" density="comfortable" color="purple" variant="text" :icon="product.liked ? 'mdi-heart' : 'mdi-heart-outline'" size="large" class="absolute! top-1 right-1 z-10" />
-                <v-img :src="product.imageUrl" height="200" cover class="opacity-60 blur-[1px] hover:opacity-100 hover:blur-0" />
+                <v-img :src="product.imageUrl" height="200" cover class="opacity-60 blur-[1px] hover:opacity-100! hover:blur-none!" />
                 <v-card-title>{{ product.name }}</v-card-title>
                 <v-card-text>{{ product.description }}</v-card-text>
             </v-card>
@@ -22,7 +22,7 @@
 </template>
 
 <script lang="ts" setup>
-    import { faker } from '@faker-js/faker/locale/de';
+    import { faker } from '@faker-js/faker';
     import { ref } from 'vue';
     import { CollectionLayout } from './CollectionLayoutSwitch.vue';
 
@@ -46,8 +46,8 @@
         return {
             id: i,
             name: faker.commerce.product(),
-            // imageUrl: faker.image.urlLoremFlickr({ category: 'computer' }),
-            imageUrl: faker.image.urlPicsumPhotos({ height: 200 }),
+            imageUrl: faker.image.urlLoremFlickr({ category: 'computer' }),
+            // imageUrl: faker.image.urlPicsumPhotos({ height: 200, blur: 0 }),
             description: faker.commerce.productDescription()
         };
     }));
