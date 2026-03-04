@@ -1,9 +1,11 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
-import type { ChartConfiguration } from 'chart.js';
+import { Component, ChangeDetectionStrategy, inject, input, Signal } from '@angular/core';
+import type { ChartConfiguration, ChartDataset } from 'chart.js';
 import { BaseChartDirective, provideCharts, withDefaultRegisterables } from 'ng2-charts';
+import { StarredReposService } from './starred-repos.service';
+import { toSignal } from '@angular/core/rxjs-interop';
 
 type BarChartOptions = ChartConfiguration<'bar'>['options'];
-type BarChartData = ChartConfiguration<'bar'>['data'];
+type BarChartSeries = ChartDataset<'bar', number[]>['data'];
 
 @Component({
     selector: 'd-compare-gh-users-stars',
@@ -13,9 +15,11 @@ type BarChartData = ChartConfiguration<'bar'>['data'];
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CompareGhUsersStars {
-    chartOptions: BarChartOptions = { responsive: false };
-    chartData: BarChartData = {
-        labels: ['user1', 'user2', 'user3'],
-        datasets: [{ data: [59, 88, 125] }]
-    };
+    private starredReposService = inject(StarredReposService);
+    protected readonly usernames = input(['web-party', 'kjzl', 'vstelmakh']);
+    protected chartOptions: BarChartOptions = { responsive: false };
+    protected readonly series: Signal<BarChartSeries> = toSignal(
+        this.starredReposService.count(this.usernames()),
+        { initialValue: this.usernames().map(() => 0)}
+    );
 }

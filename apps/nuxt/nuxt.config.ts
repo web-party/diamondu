@@ -11,6 +11,7 @@ export default defineNuxtConfig({
     css: ['~/assets/css/styles.css'],
     srcDir: 'src',
     workspaceDir: '../../',
+    serverDir: 'src/server',
 
     devServer: {
         host: 'localhost',
