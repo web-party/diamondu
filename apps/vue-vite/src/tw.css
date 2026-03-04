@@ -1,6 +1,7 @@
 @import 'tailwindcss' source('./app');
 @source '../index.html';
 @source './create-vuetify.ts';
+@source '../.storybook';
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
