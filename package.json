@@ -27,6 +27,7 @@
         "@headlessui/vue": "^1.7.23",
         "@nx/angular": "22.4.1",
         "@nx/nuxt": "22.4.1",
+        "@octokit/graphql-schema": "^15.26.1",
         "@tailwindcss/vite": "^4.2.1",
         "@vueuse/core": "^13.5",
         "chart.js": "^4.5",
