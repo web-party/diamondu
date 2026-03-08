@@ -1,24 +1,31 @@
-import { defineEventHandler, getQuery, createError, setResponseHeader } from 'h3';
-import { Octokit } from 'octokit';
+import {
+    defineEventHandler,
+    getQuery,
+    createError,
+    appendCorsHeaders,
+} from 'h3';
+import { Octokit } from '@octokit/core';
+import type { User } from '@octokit/graphql-schema';
 
-// Nitro automatically picks up environment variables from .env during development
-const octokit = new Octokit({
-    auth: process.env['OCTOKIT_AUTH'],
-});
+const octokit = new Octokit({ auth: process.env.OCTOKIT_AUTH });
 
+// TODO: consider making username param (because required) a part of the route path (as opposed to query)
 export default defineEventHandler(async (event) => {
-    // Enable CORS for the Angular app
-    setResponseHeader(event, 'Access-Control-Allow-Origin', 'http://localhost:4201');
-    setResponseHeader(event, 'Access-Control-Allow-Methods', 'GET, OPTIONS');
-    setResponseHeader(event, 'Access-Control-Allow-Headers', '*');
-
-    const q = getQuery<{ username: string }>(event);
-    const username = q.username;
+    // Enable CORS for the `kitchen-sink` app
+    // TODO: consider using `h3`'s `handleCors(event, options)` instead
+    appendCorsHeaders(event, {
+        origin: ['http://localhost:4201'],
+        methods: ['GET', 'OPTIONS'],
+        allowHeaders: '*',
+    });
+    // TODO: consider using `h3`'s `getValidatedQuery(event, validateFn)` instead
+    const { username } = getQuery<{ username: string }>(event);
 
     if (!username) {
         throw createError({
             statusCode: 400,
-            statusMessage: 'Missing username parameter',
+            statusMessage: 'Bad Request',
+            message: 'Missing username parameter',
         });
     }
 
@@ -27,15 +34,17 @@ export default defineEventHandler(async (event) => {
     }
 
     try {
-        const response = await octokit.graphql<{ user: { starredRepositories: { totalCount: number } } }>(
-            `query($login: String!) {
-              user(login: $login) {
+        // TODO: is it possible to fetch this kind of data for multiple users in a single request?
+        const response = await octokit.graphql<{ user: User }>(
+            `query getStars($username: String!) {
+              user(login: $username) {
+                avatarUrl
                 starredRepositories {
                   totalCount
                 }
               }
             }`,
-            { login: username },
+            { username },
         );
         return {
             username,
