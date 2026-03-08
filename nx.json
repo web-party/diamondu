@@ -7,8 +7,7 @@
         "@nx/angular:application": {
             "style": "css",
             "linter": "eslint",
-            "unitTestRunner": "jest",
-            "e2eTestRunner": "cypress"
+            "unitTestRunner": "jest"
         },
         "@nx/angular:library": {
             "linter": "eslint",
@@ -157,14 +156,6 @@
             "plugin": "@nx/playwright/plugin",
             "options": {
                 "targetName": "e2e"
-            }
-        },
-        {
-            "plugin": "@nx/cypress/plugin",
-            "options": {
-                "ciTargetName": "e2e-ci",
-                "targetName": "e2e",
-                "componentTestingTargetName": "component-test"
             }
         },
         {
