@@ -58,6 +58,9 @@
             "defaultConfiguration": "production"
         },
         "serve": {
+            "dependsOn": [
+                { "projects": "nuxt", "target": "serve"}
+            ],
             "executor": "@nx/angular:dev-server",
             "configurations": {
                 "production": {
