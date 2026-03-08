@@ -54,7 +54,7 @@
         "@mdi/font": "^7.4.47",
         "@nuxt/eslint": "^1.13",
         "@nuxt/kit": "^4.3",
-        "@nuxt/test-utils": "^3.23",
+        "@nuxt/test-utils": "^4",
         "@nx/devkit": "22.4.1",
         "@nx/eslint": "22.4.1",
         "@nx/eslint-plugin": "22.4.1",
@@ -98,7 +98,7 @@
         "jest-preset-angular": "16.0.0",
         "jest-util": "30.2.0",
         "jiti": "2.4.2",
-        "jsdom": "^26.1",
+        "jsdom": "^27.4",
         "nx": "22.4.1",
         "postcss": "^8.5.6",
         "prettier": "^3.6.2",
@@ -112,10 +112,5 @@
         "vitest": "4.0.9",
         "vue-router": "^4.6.4",
         "vue-tsc": "^3.2.4"
-    },
-    "overrides": {
-        "@nuxt/test-utils": {
-            "vitest": "4.0.9"
-        }
     }
 }
