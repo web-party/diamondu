@@ -153,12 +153,6 @@
             }
         },
         {
-            "plugin": "@nx/playwright/plugin",
-            "options": {
-                "targetName": "e2e"
-            }
-        },
-        {
             "plugin": "@nx/storybook/plugin",
             "options": {
                 "buildStorybookTargetName": "build-storybook",
