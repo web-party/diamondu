@@ -55,7 +55,7 @@
         "@mdi/font": "^7.4.47",
         "@nuxt/eslint": "^1.13",
         "@nuxt/kit": "^4.3",
-        "@nuxt/test-utils": "^4",
+        "@nuxt/test-utils": "^4.0.2",
         "@nx/devkit": "22.4.1",
         "@nx/eslint": "22.4.1",
         "@nx/eslint-plugin": "22.4.1",
