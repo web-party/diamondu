@@ -29,7 +29,7 @@ export default defineEventHandler(async (event) => {
         });
     }
 
-    if (!process.env['OCTOKIT_AUTH']) {
+    if (!process.env.OCTOKIT_AUTH) {
         console.warn('OCTOKIT_AUTH is not set in server-side environment.');
     }
 
