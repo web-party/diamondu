@@ -2,8 +2,9 @@
   <configuration default="false" name="kitchen-sink:serve:dev" type="NxRunConfigurationType">
     <option name="nx-projects" value="kitchen-sink" />
     <option name="nx-targets" value="serve" />
+    <option name="nx-target-configuration" value="development" />
     <envs />
-    <option name="arguments" value="" />
+    <option name="arguments" value="--port=4201" />
     <method v="2" />
   </configuration>
 </component>
