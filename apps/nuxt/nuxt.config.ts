@@ -4,10 +4,6 @@ import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 export default defineNuxtConfig({
     modules: ['@nuxt/eslint', '@nuxt/test-utils/module'],
 
-    imports: {
-        autoImport: true,
-    },
-
     css: ['~/assets/css/styles.css'],
     srcDir: 'src',
     workspaceDir: '../../',
@@ -38,6 +34,7 @@ export default defineNuxtConfig({
                 semi: true,
                 severity: 'warn',
                 jsx: false,
+                // braceStyle: '1tbs',
             },
             // standalone: false,
         },
