@@ -11,10 +11,11 @@ const octokit = new Octokit({ auth: process.env.OCTOKIT_AUTH });
 
 // TODO: consider making username param (because required) a part of the route path (as opposed to query)
 export default defineEventHandler(async (event) => {
+    const config = useRuntimeConfig(event);
     // Enable CORS for the `kitchen-sink` app
     // TODO: consider using `h3`'s `handleCors(event, options)` instead
     appendCorsHeaders(event, {
-        origin: ['http://localhost:4201'],
+        origin: [config.corsOrigin],
         methods: ['GET', 'OPTIONS'],
         allowHeaders: '*',
     });

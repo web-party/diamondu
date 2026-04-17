@@ -4,6 +4,12 @@ import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 export default defineNuxtConfig({
     modules: ['@nuxt/eslint', '@nuxt/test-utils/module'],
 
+    $development: {
+        runtimeConfig: {
+            corsOrigin: 'http://localhost:4201',
+        },
+    },
+
     css: ['~/assets/css/styles.css'],
     srcDir: 'src',
     workspaceDir: '../../',
