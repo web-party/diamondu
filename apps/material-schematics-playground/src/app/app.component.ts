@@ -4,7 +4,7 @@ import { GlobalNav } from './global-nav/global-nav.component';
 @Component({
     selector: 'sch-root',
     template: `<sch-global-nav />`,
-    imports: [GlobalNav]
+    imports: [GlobalNav],
 })
 export class App {
     title = 'material-schematics-playground';

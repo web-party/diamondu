@@ -5,7 +5,7 @@ import vuetify from '../create-vuetify';
 
 describe('App', () => {
     it('renders properly', () => {
-        const wrapper = mount(App, { global: { plugins: [vuetify] }});
+        const wrapper = mount(App, { global: { plugins: [vuetify] } });
         expect(wrapper.text()).toContain('IBAN:');
     });
 });

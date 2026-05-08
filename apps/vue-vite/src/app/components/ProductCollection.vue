@@ -40,7 +40,7 @@
 
     const loading = ref(true);
 
-    setTimeout(() => { loading.value = false }, 2_000);
+    setTimeout(() => { loading.value = false; }, 2_000);
 
     const products = ref([...new Array(12)].map<Product>((_, i) => {
         return {
@@ -48,7 +48,7 @@
             name: faker.commerce.product(),
             imageUrl: faker.image.urlLoremFlickr({ category: 'computer' }),
             // imageUrl: faker.image.urlPicsumPhotos({ height: 200, blur: 0 }),
-            description: faker.commerce.productDescription()
+            description: faker.commerce.productDescription(),
         };
     }));
 

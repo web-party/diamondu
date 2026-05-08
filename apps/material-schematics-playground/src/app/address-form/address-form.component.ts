@@ -11,7 +11,7 @@ import { MatRadioGroup, MatRadioButton } from '@angular/material/radio';
     templateUrl: './address-form.component.html',
     styleUrls: ['./address-form.component.css'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [ReactiveFormsModule, MatCard, MatCardHeader, MatCardTitle, MatCardContent, MatFormField, MatInput, MatError, MatButton, MatSelect, MatOption, MatHint, MatRadioGroup, MatRadioButton, MatCardActions]
+    imports: [ReactiveFormsModule, MatCard, MatCardHeader, MatCardTitle, MatCardContent, MatFormField, MatInput, MatError, MatButton, MatSelect, MatOption, MatHint, MatRadioGroup, MatRadioButton, MatCardActions],
 })
 export class AddressForm {
     private readonly fb = inject(FormBuilder);
@@ -25,9 +25,9 @@ export class AddressForm {
         city: [null, Validators.required],
         state: [null, Validators.required],
         postalCode: [null, Validators.compose([
-            Validators.required, Validators.minLength(5), Validators.maxLength(5)])
+            Validators.required, Validators.minLength(5), Validators.maxLength(5)]),
         ],
-        shipping: ['free', Validators.required]
+        shipping: ['free', Validators.required],
     });
 
     hasUnitNumber = false;
@@ -91,7 +91,7 @@ export class AddressForm {
         { name: 'Washington', abbreviation: 'WA' },
         { name: 'West Virginia', abbreviation: 'WV' },
         { name: 'Wisconsin', abbreviation: 'WI' },
-        { name: 'Wyoming', abbreviation: 'WY' }
+        { name: 'Wyoming', abbreviation: 'WY' },
     ];
 
     onSubmit(): void {

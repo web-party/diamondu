@@ -32,7 +32,7 @@ type Card = {
         MatMenuItem,
         MatCardContent,
     ],
-    host: { class: 'block p-5' }
+    host: { class: 'block p-5' },
 })
 export class Dashboard {
     /** Based on the screen size, switch from standard to one column per row */
@@ -55,7 +55,7 @@ export class Dashboard {
                     { title: 'Card 3', cols: 1, rows: 2 },
                     { title: 'Card 4', cols: 1, rows: 1 },
                 ];
-            })
+            }),
         );
 
     protected cards = toSignal(this.cards$);

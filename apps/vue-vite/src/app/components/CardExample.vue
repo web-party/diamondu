@@ -65,7 +65,7 @@
     const selection = ref(1);
     const productName = ref(faker.commerce.product());
 
-    const intervalId = setInterval(() => { productName.value = faker.commerce.product(); }, 2_000)
+    const intervalId = setInterval(() => { productName.value = faker.commerce.product(); }, 2_000);
 
     function reserve() {
         reserving.value = true;

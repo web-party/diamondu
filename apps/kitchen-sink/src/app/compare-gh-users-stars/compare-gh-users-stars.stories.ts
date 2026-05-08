@@ -7,6 +7,6 @@ const meta: Meta<CompareGhUsersStars> = {
 };
 
 export default meta;
-type Story =  StoryObj<CompareGhUsersStars>;
+type Story = StoryObj<CompareGhUsersStars>;
 
 export const Primary: Story = {};

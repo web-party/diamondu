@@ -20,6 +20,6 @@ export class CompareGhUsersStars {
     protected chartOptions: BarChartOptions = { responsive: false };
     protected readonly series: Signal<BarChartSeries> = toSignal(
         this.starredReposService.count(this.usernames()),
-        { initialValue: this.usernames().map(() => 0)}
+        { initialValue: this.usernames().map(() => 0) },
     );
 }

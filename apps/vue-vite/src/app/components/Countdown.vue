@@ -14,11 +14,11 @@
     // TODO: consider using `dayjs` for better duration support
 
     const { startAt = '00:10' } = defineProps<{ startAt?: string }>(),
-        initialRemainingTime = parse(startAt, 'mm:ss', Date.now()),
-        remainingTime = ref(initialRemainingTime),
-        displayedRemainingTime = computed(() => format(remainingTime.value, 'mm:ss')),
-        domRemainingTime = computed(() => 'PT' + displayedRemainingTime.value.replace(':', 'M')),
-        finished = computed(() => displayedRemainingTime.value === '00:00');
+          initialRemainingTime = parse(startAt, 'mm:ss', Date.now()),
+          remainingTime = ref(initialRemainingTime),
+          displayedRemainingTime = computed(() => format(remainingTime.value, 'mm:ss')),
+          domRemainingTime = computed(() => 'PT' + displayedRemainingTime.value.replace(':', 'M')),
+          finished = computed(() => displayedRemainingTime.value === '00:00');
     let intervalId: ReturnType<typeof setInterval>;
 
     onMounted(() => {

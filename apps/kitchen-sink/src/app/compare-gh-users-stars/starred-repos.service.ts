@@ -4,7 +4,7 @@ import { catchError, map } from 'rxjs/operators';
 import { Observable, of, forkJoin } from 'rxjs';
 
 @Injectable({
-    providedIn: 'root'
+    providedIn: 'root',
 })
 export class StarredReposService {
     private http = inject(HttpClient);
@@ -22,10 +22,10 @@ export class StarredReposService {
     private getStarCount(username: string): Observable<number> {
         const response = this.http.get<{ stars: number }>(
             'http://localhost:4200/api/github/stars',
-            { params: { username }, mode: 'cors' }
+            { params: { username }, mode: 'cors' },
         );
         return response.pipe(
-            map((v) => v.stars),
+            map(v => v.stars),
             catchError(err => {
                 console.error(err);
                 return of(0);

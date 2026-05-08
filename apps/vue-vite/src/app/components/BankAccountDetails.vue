@@ -25,9 +25,9 @@
     import { computed, ref } from 'vue';
 
     const iban = faker.finance.iban({ formatted: true, countryCode: 'DE' }),
-        { copy, copied, text } = useClipboard({ copiedDuring: 2000 }),
-        iconId = computed(() => `mdi-${copied.value ? 'check' : 'content-copy'}`),
-        tooltipActive = ref(false);
+          { copy, copied, text } = useClipboard({ copiedDuring: 2000 }),
+          iconId = computed(() => `mdi-${copied.value ? 'check' : 'content-copy'}`),
+          tooltipActive = ref(false);
 
     function copyIban() {
         copy(iban);

@@ -12,7 +12,7 @@ export const withVuetifyTheme: Decorator = (storyFn, context) => {
             {
                 // Puts your story into StoryWrapper's "story" slot with your story args
                 story: () => h(story, { ...context.args }),
-            }
+            },
         );
     };
 };
