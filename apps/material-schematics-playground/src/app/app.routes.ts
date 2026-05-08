@@ -8,18 +8,18 @@ export const appRoutes: Route[] = [
     {
         path: '',
         pathMatch: 'full',
-        component: Dashboard
+        component: Dashboard,
     },
     {
         path: 'address-form',
-        component: AddressForm
+        component: AddressForm,
     },
     {
         path: 'settings',
-        component: Settings
+        component: Settings,
     },
     {
         path: 'floor-plan',
-        component: FloorPlan
-    }
+        component: FloorPlan,
+    },
 ];

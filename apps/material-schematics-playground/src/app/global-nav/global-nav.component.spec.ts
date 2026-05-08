@@ -8,7 +8,7 @@ describe('GlobalNavComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            providers: [provideRouter([])]
+            providers: [provideRouter([])],
         }).compileComponents();
 
         fixture = TestBed.createComponent(GlobalNav);

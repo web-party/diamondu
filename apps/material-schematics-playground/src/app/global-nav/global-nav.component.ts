@@ -26,15 +26,16 @@ import { MatIconButton } from '@angular/material/button';
         MatListItemIcon,
         MatSidenavContent,
         MatIconButton,
-        RouterOutlet
-    ]
+        RouterOutlet,
+    ],
 })
 export class GlobalNav {
     private readonly isHandset$ = inject(BreakpointObserver)
         .observe(Breakpoints.Handset)
         .pipe(
             map(result => result.matches),
-            shareReplay()
+            shareReplay(),
         );
+
     protected isNarrowViewport = toSignal(this.isHandset$);
 }

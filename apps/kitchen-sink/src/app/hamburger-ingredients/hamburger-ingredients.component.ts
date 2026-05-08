@@ -18,7 +18,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
         }
     `],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    host: { class: 'w-full h-full flex flex-col items-center bg-zinc-950' }
+    host: { class: 'w-full h-full flex flex-col items-center bg-zinc-950' },
 })
 export class HamburgerIngredients implements AfterViewInit {
     private readonly hero = viewChild.required<ElementRef<SVGElement>>('hero');
@@ -37,14 +37,14 @@ export class HamburgerIngredients implements AfterViewInit {
                 trigger: this.hero().nativeElement,
                 start: '0 99%',
                 end: '75% 0',
-                scrub: 1
-            }
+                scrub: 1,
+            },
         });
         gsap.context(() => {
             tl.from('image', {
-                y: (i) => [0, 830, 435, 500, 670, 290, 280, 350, 300, 420, 560, 350][i],
+                y: i => [0, 830, 435, 500, 670, 290, 280, 350, 300, 420, 560, 350][i],
                 transformOrigin: '50%',
-                rotate: (i) => [0, -12, -9, 4, 10, -5, -8, -9, 9, 4, -5, 3][i],
+                rotate: i => [0, -12, -9, 4, 10, -5, -8, -9, 9, 4, -5, 3][i],
             });
         }, this.hero());
     }

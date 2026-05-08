@@ -5,7 +5,7 @@ import { provideAnimations } from '@angular/platform-browser/animations';
 import {
     withEnabledBlockingInitialNavigation,
     provideRouter,
-    withViewTransitions
+    withViewTransitions,
 } from '@angular/router';
 import { appRoutes } from './app/app.routes';
 import { App } from './app/app.component';
@@ -20,6 +20,6 @@ bootstrapApplication(App, {
         { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'outline' } },
         provideAnimations(),
         provideRouter(appRoutes, withEnabledBlockingInitialNavigation(), withViewTransitions()),
-    ]
+    ],
 })
-    .catch((err) => console.error(err));
+    .catch(console.error);

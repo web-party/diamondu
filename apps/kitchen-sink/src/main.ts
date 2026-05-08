@@ -11,7 +11,7 @@ if (environment.production) {
 bootstrapApplication(App, {
     providers: [
         provideZonelessChangeDetection(),
-        provideHttpClient(withFetch())
-    ]
+        provideHttpClient(withFetch()),
+    ],
 })
     .catch(console.error);

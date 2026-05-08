@@ -13,6 +13,6 @@ export default createVuetify({
     defaults: {
         VBtn: {
             class: 'cursor-pointer',
-        }
-    }
+        },
+    },
 });

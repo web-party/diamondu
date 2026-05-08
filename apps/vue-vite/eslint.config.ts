@@ -18,6 +18,8 @@ export default defineConfig(
             },
         },
         rules: {
+            '@stylistic/indent': 'off',
+            'vue/script-indent': ['warn', 4, { baseIndent: 1 }],
             'vue/multi-word-component-names': 'off',
             'vue/html-indent': ['error', 4],
             'vue/max-attributes-per-line': 'off',

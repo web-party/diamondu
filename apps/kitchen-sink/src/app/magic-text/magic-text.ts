@@ -7,7 +7,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
     selector: 'd-magic-text',
     templateUrl: './magic-text.html',
     changeDetection: ChangeDetectionStrategy.OnPush,
-    host: { class: 'block p-5 max-w-6xl text-6xl font-bold tracking-wide' }
+    host: { class: 'block p-5 max-w-6xl text-6xl font-bold tracking-wide' },
 })
 export class MagicText {
     readonly title = input('kitchen sink');
@@ -15,7 +15,8 @@ export class MagicText {
         take(this.title().length + 1),
         map(v => this.title()[v]),
         scan<string, string[]>((acc, curr) => [...acc, curr], []),
-        repeat(3)
+        repeat(3),
     );
+
     protected readonly characters = toSignal(this.characters$);
 }
