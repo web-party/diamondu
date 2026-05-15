@@ -21,6 +21,7 @@ export class StarredReposService {
 
     private getStarCount(username: string): Observable<number> {
         const response = this.http.get<{ stars: number }>(
+            // TODO: can host env var be used?
             'http://localhost:4200/api/github/stars',
             { params: { username }, mode: 'cors' },
         );

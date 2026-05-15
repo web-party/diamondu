@@ -1,7 +1,6 @@
 import { enableProdMode } from '@angular/core';
 import { environment } from './environments/environment';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
-import { provideAnimations } from '@angular/platform-browser/animations';
 import {
     withEnabledBlockingInitialNavigation,
     provideRouter,
@@ -18,7 +17,6 @@ if (environment.production) {
 bootstrapApplication(App, {
     providers: [
         { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'outline' } },
-        provideAnimations(),
         provideRouter(appRoutes, withEnabledBlockingInitialNavigation(), withViewTransitions()),
     ],
 })
