@@ -13,7 +13,6 @@
                 "outputPath": "dist/apps/material-schematics-playground",
                 "index": "apps/material-schematics-playground/src/index.html",
                 "main": "apps/material-schematics-playground/src/main.ts",
-                "polyfills": "apps/material-schematics-playground/src/polyfills.ts",
                 "tsConfig": "apps/material-schematics-playground/tsconfig.app.json",
                 "inlineStyleLanguage": "scss",
                 "assets": [

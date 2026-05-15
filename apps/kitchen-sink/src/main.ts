@@ -1,4 +1,4 @@
-import { enableProdMode, provideZonelessChangeDetection } from '@angular/core';
+import { enableProdMode } from '@angular/core';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { environment } from './environments/environment';
 import { bootstrapApplication } from '@angular/platform-browser';
@@ -10,7 +10,6 @@ if (environment.production) {
 
 bootstrapApplication(App, {
     providers: [
-        provideZonelessChangeDetection(),
         provideHttpClient(withFetch()),
     ],
 })
