@@ -1,61 +1,16 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
-# compiled output
+# Dependencies
+/node_modules/
+
+# Build output and framework caches
 /dist
-/tmp
 /out-tsc
-
-# dependencies
-node_modules
-
-# IDEs and editors
-/.idea
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
-/.junie/
-/.cursor/rules/
-/.gemini/
-/.agents/
-CLAUDE.md
-.mcp.json
-
-# IDE - VSCode
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-/.github/instructions/
-/.github/agents/
-/.github/prompts/
-/.github/skills/
-
-# misc
-/.sass-cache
-/connect.lock
-/coverage
-/libpeerconnection.log
-npm-debug.log
-yarn-error.log
-testem.log
-/typings
-
-# System Files
-.DS_Store
-Thumbs.db
-
-# Environment variables
-.env*
-!.env.example
-
 .angular
-
 .nx/cache
 .nx/workspace-data
+.nx/polygraph
+
 # Nuxt dev/build outputs
 .output
 .data
@@ -65,6 +20,53 @@ Thumbs.db
 vite.config.*.timestamp*
 vitest.config.*.timestamp*
 
-.claude/worktrees/
-.claude/settings*
-.nx/polygraph
+# Test output, logs, and generated artifacts
+/coverage
+/typings
+/.sass-cache
+/connect.lock
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+
+# Local workspace files
+/tmp
+/todos/
+/plans/
+
+# Environment variables
+.env*
+!.env.example
+
+# Editors and local tooling
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Agent tooling
+/.agents/
+/.claude/
+CLAUDE.md
+/.cursor/
+/.gemini/
+/.junie/
+.mcp.json
+/.github/instructions/
+/.github/agents/
+/.github/prompts/
+/.github/skills/
+skills-lock.json
+
+# System files
+.DS_Store
+Thumbs.db
