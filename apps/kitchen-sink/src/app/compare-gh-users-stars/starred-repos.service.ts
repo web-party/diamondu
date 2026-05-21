@@ -2,6 +2,7 @@ import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { catchError, map } from 'rxjs/operators';
 import { Observable, of, forkJoin } from 'rxjs';
+import { environment as env } from '../../environments/environment';
 
 @Injectable({
     providedIn: 'root',
@@ -21,8 +22,7 @@ export class StarredReposService {
 
     private getStarCount(username: string): Observable<number> {
         const response = this.http.get<{ stars: number }>(
-            // TODO: can host env var be used?
-            'http://localhost:4200/api/github/stars',
+            `${env.apiBaseUrl}/api/github/stars`,
             { params: { username }, mode: 'cors' },
         );
         return response.pipe(
