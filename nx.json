@@ -7,11 +7,11 @@
         "@nx/angular:application": {
             "style": "css",
             "linter": "eslint",
-            "unitTestRunner": "jest"
+            "unitTestRunner": "vitest-analog"
         },
         "@nx/angular:library": {
             "linter": "eslint",
-            "unitTestRunner": "jest"
+            "unitTestRunner": "vitest-analog"
         },
         "@nx/angular:component": {
             "style": "css"
@@ -83,19 +83,6 @@
             ],
             "cache": true
         },
-        "@nx/jest:jest": {
-            "inputs": ["default", "^default", "{workspaceRoot}/jest.preset.js"],
-            "cache": true,
-            "options": {
-                "passWithNoTests": true
-            },
-            "configurations": {
-                "ci": {
-                    "ci": true,
-                    "codeCoverage": true
-                }
-            }
-        },
         "@nx/eslint:lint": {
             "inputs": ["default", "{workspaceRoot}/eslint.config.ts"],
             "cache": true
@@ -104,7 +91,7 @@
             "dependsOn": ["^build"]
         },
         "@nx/vitest:test": {
-            "inputs": ["default", "^default", "{workspaceRoot}/jest.preset.js"],
+            "inputs": ["default", "^default"],
             "cache": true
         }
     },

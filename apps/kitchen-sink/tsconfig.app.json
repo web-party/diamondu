@@ -12,7 +12,6 @@
     "exclude": [
         "**/*.test.ts",
         "**/*.spec.ts",
-        "jest.config.ts",
         "**/*.stories.ts",
         "**/*.stories.js"
     ]

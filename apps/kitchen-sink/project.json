@@ -74,11 +74,10 @@
             "continuous": true
         },
         "test": {
-            "executor": "@nx/jest:jest",
+            "executor": "@nx/vitest:test",
             "outputs": ["{workspaceRoot}/coverage/apps/kitchen-sink"],
             "options": {
-                "jestConfig": "apps/kitchen-sink/jest.config.ts",
-                "tsConfig": "apps/kitchen-sink/tsconfig.spec.json"
+                "configFile": "apps/kitchen-sink/vite.config.ts"
             }
         },
         "storybook": {

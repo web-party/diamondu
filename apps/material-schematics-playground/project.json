@@ -81,11 +81,10 @@
             "executor": "@nx/eslint:lint"
         },
         "test": {
-            "executor": "@nx/jest:jest",
-            "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+            "executor": "@nx/vitest:test",
+            "outputs": ["{workspaceRoot}/coverage/apps/material-schematics-playground"],
             "options": {
-                "jestConfig": "apps/material-schematics-playground/jest.config.ts",
-                "tsConfig": "apps/material-schematics-playground/tsconfig.spec.json"
+                "configFile": "apps/material-schematics-playground/vite.config.ts"
             }
         }
     }
